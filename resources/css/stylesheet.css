@@ -1,0 +1,213 @@
+/*--------------------HOME PAGE----------------*/
+html,body,header{
+    max-width: 1195px !important; /* ipad size */
+    margin: 0;
+    width: auto;  
+}
+h1,h2,h3,h4,p,a,button{
+    font-family: Basic;
+
+}
+/*-----------------HEADER---------------*/
+header{
+    height: 133px;
+    background-color: #FFF; 
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+   width: 100% ; 
+   z-index: 100; 
+}
+.mainHeader{
+   padding: 14px 20px 7.2px 24.6px;
+}
+.logo{
+    width: 111.8px;
+    height: 111.8px;
+    margin: 0 47.6px 0 0;
+    object-fit: contain;
+    float: left;
+}
+.shoppingCartBox{
+    float: left;
+}
+.shoppingCart{
+    width: 56px;
+    height: 56px;
+    margin: 29px 11px 26.8px 29px;
+    object-fit: contain;
+    float: left;
+}
+.subTotal{
+    float: left;
+    margin: 38px 40px 36.8px 11px;
+    font-family: Basic;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+.loginButton{
+    float: right;
+    width: 217px;
+    height: 57px;
+    margin: 25px 0px 29.8px 51px;
+    border-radius: 23px;
+    border: #ffd130;
+    background-color: #ffd130;
+    font-size : 24px;
+}
+
+.loginButtonVIP{
+    float: right;
+    width: 450px;
+    height: 57px;
+    margin: 25px 0px 29.8px 51px;
+    border-radius: 23px;
+    border: #ffd130;
+    background-color: #ffd130;
+    overflow: hidden;
+    display: none;
+}/*-----VIPSWITCH----*/
+
+.loginButtonVIP a{
+    display: block;
+    margin: 10px 20px;
+    font-size : 24px;
+    text-decoration: none;
+    color: #000000;
+    float: left;
+}
+#languageId{
+    float: right;
+    width: 56px;
+    height: 56px;
+    margin: 30px 21px 29.8px 40px;
+    object-fit: contain;
+    border-radius: 125px;
+}
+
+
+
+/*----------------MAIN CONTENT--------------*/
+.main{
+   overflow: hidden;
+   width: 100%;
+   margin-top: 200px !important;
+}
+/*----------FILTER-----------*/
+.filterBox{
+    float: left;
+    width: 6% ;
+    height: 573px;
+
+    background-color: #eeeded;
+}
+.productBox{
+    float: right;
+}
+.filterStar{
+    width: 43px;
+    height: 48px;
+    margin:25px  auto ;
+    display: block;
+    display: none; /*-----VIPSWITCH----*/
+}
+.filter1{
+    width: 21px;
+    height: 37.1px;
+    margin:25px auto ;
+    object-fit: contain;
+    display: block;
+}
+.filter2{
+    width: 19px;
+    height: 43px;
+    margin: 25px auto;
+    object-fit: contain;
+    display: block;
+
+}
+/*----------BANNER+PRODUCT BOX----------*/
+.rightContainer{
+    float: right;
+    width: 89%;
+    padding-left:5% ;
+  
+}
+/*-------------BANNER---------*/
+
+.vipBanner{
+    float: right;
+    width: 100%;
+    height: auto;
+    display: none; 
+    /*-----VIPSWITCH----*/
+    padding-bottom:40px ;
+}
+/*---------PRODUCT BOX----------*/
+.productBox{
+    padding: 0 2%;  
+    width: 96%;
+}
+.groupDrinkBox{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+h2{
+  font-size: 30px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.54;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+.singleDrinkBox{
+    width: 24%;
+    padding: 0.5%;
+    float: left;
+    position: relative;
+}
+.singleDrinkText{
+    width: 222px;
+    height: 25px;
+    font-family: Basic;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+.vipFavourite{
+   display: none;
+ /*-----VIPSWITCH----*/
+}
+.starAlwaysFull{
+    position: absolute;
+    top:45%;
+    right: 20%;
+}
+.starFull{
+    position: absolute;
+    top:45%;
+    right: 20%;
+    display: none;
+    /*-----VIPSWITCH----*/
+}
+.starEmpty{
+    position: absolute;
+    top:45%;
+    right: 20%;
+    display: none;
+    /*-----VIPSWITCH----*/
+}
