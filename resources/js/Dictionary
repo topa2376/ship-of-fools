@@ -1,0 +1,10 @@
+var language = 'en' // default language
+
+dict = {
+'en' = {'[ADD TEXT HERE]'},
+'se' = {'[ADD TEXT HERE]'}
+}
+
+//we'll need a get_text function
+
+//and a change langauge function.
