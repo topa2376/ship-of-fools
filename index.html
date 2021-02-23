@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="resources/css/order_box.css">
     <script type="text/javascript" src="resources/js/control_order_box.js"></script>
+    <script type="text/javascript" src="resources/js/control_login_box.js"></script>
     <script type="text/javascript" src="resources/js/dictionary.js"></script>
     <script type="text/javascript" src="resources/js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="resources/js/model.js"></script>
@@ -21,7 +22,7 @@
             <a href="index.html"><img class="logo" src="resources/Images/logo.png"></a>
             <div class="shoppingCartBox">
                 <!---------------OPEN ORDERBOX---------------->
-                <img class="shoppingCart" src="resources/Images/cart.png">
+                <button class="shoppingCart" id="open_order_box"></button>
                 <p class="subTotal">Sub Total:  KR</p>  <!--？---->
             </div>
             <!---------------ORDERBOX---------------->
@@ -31,7 +32,7 @@
                 <div class="order_box-content">
                   <span class="close">&times;</span>
                   <center>
-                  <!-- To be replaced with Dict for translation -->
+                  <!-- To be replaced with Dict for items/translation -->
                   <div id="current_order">Current Order</div>
                   <div id="item">Item1   x1    40kr</div>
                   <div class="action_btn">Swish</div>
@@ -40,7 +41,28 @@
                 </div>
               
                 </div>
-            <button class="loginButton" onclick="">VIP Login</button>
+                <!-- Button to open login_box -->
+            <button class="loginButton" id="open_login_box">VIP Login</button>
+            <!-- The login_box -->
+            <div id="myorder_box" class="order_box">
+
+            <!-- login box content -->
+            <div class="login_box-content">
+            <span class="close">&times;</span>
+            <center>
+            <!-- To be replaced with Dict for translation -->
+            <div class="box_title">VIP Login</div>
+        
+            <div class="login_box">‏‏‎ ‎‏‏‎ ‎Username</div>
+            <br><br>
+            <div class="login_box">‎‎‎‎‎‎‏‏‎ ‎‏‏‎ ‎Password</div>
+            <br>
+            <div class="action_btn">Login</div>
+            </center>
+            </div>
+        
+            </div>
+  
             <div class="loginButtonVIP"><a href="#" onclick="">Hello, Bob &nbsp  300 credits &nbsp </a>  <a href="#" onclick="">LOGOUT</a> </div>
             <img id="languageId"  onclick="switchLanguage()" src="resources/Images/english.png" > <!-- Switch language--->   
         </div>
