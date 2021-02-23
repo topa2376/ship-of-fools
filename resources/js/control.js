@@ -3,19 +3,50 @@ function switchLanguage () {
   if (language=='en'){// English
      document.getElementById("languageId").src="./resources/img/swedish.png";  
      language='se';
-     update_view();
+     update_language();
   }else{
     document.getElementById("languageId").src="./resources/img/english.png";
     language='en';
-    update_view();
+    update_language();
   }// Swedish
+}
+
+function add_purchase(){
+  //get content from page 
+  //perform operation 
+  //update model 
+  //update view
+}
+
+function sub_purchase(){
+  //get content from page 
+  //perform operation 
+  //update model 
+  //update view
+}
+
+function change_quantity(){
+  //get content from page 
+  //perform operation 
+  //update model 
+  //update view
+}
+
+function update_total(result){
+}
+
+
+function update_language(){
+  keys = lanDict['keys'];
+  for (idx in keys) {
+      key = keys[idx];
+      $("#" + key).text(get_string(key));
+  };
 }
 
 function update_view(){
   //change the dict elements 
-
   //update all the product elements
-
 }
 
 function intialize_view() {
@@ -27,6 +58,7 @@ function intialize_view() {
     var prod = get_product(i);
     drink_box(dst, prod);
   }
+  update_language();
 }
 
 function drink_box(destination, prod) {
