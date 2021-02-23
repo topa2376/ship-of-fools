@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ship of the Fools</title>
+    <script type="text/javascript" src="resources/js/beverages.js"></script>
+    <script type="text/javascript" src="resources/js/beverages_eng.js"></script>
+    <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+    <script type="text/javascript" src="resources/js/dictionary.js"></script>
+    <script type="text/javascript" src="resources/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="resources/js/model.js"></script>
+    <script type="text/javascript" src="resources/js/control.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet"> <!--FONT--->
+</head>
+<body>
+    <!---------------HEADER---------------->
+    <header >
+        <div class='mainHeader'>
+            <a href="index.html"><img class="logo" src="resources/img/logo.png"></a>
+            <div class='shoppingCartBox'>
+                <img class="shoppingCart" src="resources/img/cart.png">
+                <p class='subTotal'>Sub Total:  KR</p>  <!--？---->
+            </div>
+            <button class='loginButton' onclick=''>VIP Login</button>
+            <div class='loginButtonVIP'><a href="#" onclick=''>Hello, Bob &nbsp  300 credits &nbsp </a>  <a href="#" onclick=''>LOGOUT</a> </div>
+            <img id="languageId"  onclick='switchLanguage()' src="resources/img/english.png" > <!-- Switch language--->   
+        </div>
+
+    </header>
+
+    <!---------------MAIN---------------->
+    <div class='main'>
+        <!------LEFT FILTER----------->
+        <div class='filterBox'>
+            <img class="filterStar" src="resources/img/vip/filter-star.png"> <!-- ? Now is display:none--->    
+            <img class="filter1" src="resources/img/user/filter1.png"> 
+            <img class="filter2" src="resources/img/user/filter2.png"> 
+        </div>
+
+        <!------RIGHT CONTAINER BOX---------->
+        <div class='rightContainer'>
+            <!-------------BANNER-------->
+            <img class="vipBanner" src="resources/img/vip/banner.png">
+            <!----DRINK PRODUCT BOX------>
+            <div class='productBox'>
+
+
+               <!----VIP DRINK--? currently hardcode-->
+
+ <!----CIDER----->
+                 <div class='groupDrinkBox' id='groupDrinkBox'></div>
+
+        </div>
+
+    </div>
+ 
+</body>
+</html>
