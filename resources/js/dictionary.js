@@ -31,3 +31,5 @@ function get_product(key){
     return engBev[key];
 }
 
+=======
+var language=true;
