@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="resources/css/bartender_stylesheet.css">
+    <title>Bartender</title>
+	<script type="text/javascript" src="resources/js/dictionary.js"></script>
+    <script type="text/javascript" src="resources/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="resources/js/model.js"></script>
+    <script type="text/javascript" src="resources/js/mathFunc.js"></script>
+    <script type="text/javascript" src="resources/js/control.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet">
+</head>
+<body>
+	 
+<div class="wrapper">
+
+    <div id="header">
+		
+			<a href="bartenderMain.html"><img class="logo" src="resources/images/logo.png"></a>		
+			<a href="bartenderMain.html" class="nav_btn">Home</a>
+			<a href="bartenderInventory.html" class="nav_btn">Inventory</a>
+			<a href="bartenderMembers.html" class="nav_btn">Members</a>
+			<img id="languageId"  onclick='switchLanguage()' src="resources/images/english.png" >
+			<a href class="nav_btn" id="login">Login</a>
+			
+		
+		
+    </div>
+	<div class="main">
+		<div id="orders">
+		
+			<div class="list" id="ordersRequested">
+				<div class="heading">
+					<h1>Order Requests</h1>
+				</div>
+				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
+				<div class="list_item">
+					<div class="itemNumber"><p>#001</p></div>
+					<div class="itemName"><p>FirstName LastName</p></div>
+				</div>
+				<!----End of print------>
+			</div>
+		
+			<div class="list" id="acceptedOrders">
+				<div class="heading">
+					<h1>Accepted Orders</h1>
+				</div>
+				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
+				<div class="list_item">
+					<div class="itemNumber"><p>#001</p></div>
+					<div class="itemName"><p>FirstName LastName</p></div>
+				</div>
+				<!----End of print------>
+			</div>
+		</div>
+		
+		<div id="bin_addOrder">
+			<img id="bin" src="resources/Images/Bartender/bin.png">
+			<a href class="nav_btn">Add an order</a>
+		</div>
+		
+		<div class="list" id="ordersHistory">
+				<div class="heading">
+					<div id="orderHistoryH1Spacer"></div>
+					<h1>Order History</h1> <a href class="nav_btn" id="orderHistoryEdit_btn">Edit List</a>
+				</div>
+				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
+				<div class="list_item">
+					<div class="itemNumber"><p>#001</p></div>
+					<div class="itemName"><p>FirstName LastName</p></div>
+				</div>
+				<!----End of print------>
+		</div>
+
+		
+	</div>
+
+</div>
+</body>
+</html>
