@@ -6,6 +6,7 @@
     <script type="text/javascript" src="resources/js/beverages.js"></script>
     <script type="text/javascript" src="resources/js/beverages_eng.js"></script>
     <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/pop-up.css">
     <script type="text/javascript" src="resources/js/dictionary.js"></script>
     <script type="text/javascript" src="resources/js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="resources/js/model.js"></script>
@@ -16,47 +17,106 @@
 <body>
     <!---------------HEADER---------------->
     <header >
-        <div class='mainHeader'>
+        <div class="mainHeader">
             <a href="index.html"><img class="logo" src="resources/img/logo.png"></a>
-            <div class='shoppingCartBox'>
-                <img class="shoppingCart" src="resources/img/cart.png">
-                <div class='subTotal' id='total'></div>
+            <div class="shoppingCartBox">
+                <!-- Cart button -->
+                <button onclick="document.getElementById('myCart').style.display='block'" style="width:auto;" class="shoppingCart"></button>
+
+                <!-- The Cart -->
+                <div id="myCart" class="popCartBg">
+                <!-- Cart content -->
+
+                <div class="popCartContent cartAnimation">
+
+                    <!-- Close button (x) -->
+                    <span onclick="document.getElementById('myCart').style.display='none'" class="closeCart" title="Close Cart">&times;</span>
+
+                    <!-- Content here -->
+                    <p>Cart content</p>
+
+                </div>
+                </div>
+                <div class="subTotal" id="total"></div>
             </div>
-            <button class='loginButton' id='login' onclick=''></button>
+            <!-- Login Button -->
+            <button onclick="document.getElementById('myLogin').style.display='block'" style="width:auto;" class="loginButton">VIP Login</button>
+
+            <!-- Login Content Start -->
+            <div id="myLogin" class="popLoginBg">
+            
+            <!-- Login Form. Please link the 'action' to the control/model -->
+            <form class="popLoginContent loginAnimation" action="" method="post">
+                <div class="imgcontainer">
+                <div id="vip-login" class="vip-login-heading">Vip Login</div>
+                <span onclick="document.getElementById('myLogin').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="resources/img/pirate.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                    
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('myLogin').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw"><a href="#">Forgot password?</a></span>
+                </div>
+            </form>
+            <script>
+            // Get the modal
+            var loginModal = document.getElementById('myLogin');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == loginModal) {
+                    loginModal.style.display = "none";
+                }
+            }
+            </script>
+            </div>
 
 <!-------------NOT IMPLEMENTED YET-------->
-            <div class='loginButtonVIP'><a href="#" onclick=''>Hello, Bob &nbsp  300 credits &nbsp </a>  <a href="#" onclick=''>LOGOUT</a> </div>
+            <div class="loginButtonVIP"><a href="#" onclick="">Hello, Bob &nbsp  300 credits &nbsp </a>  <a href="#" onclick="">LOGOUT</a> </div>
 <!-------------NOT IMPLEMENTED YET-------->
 
-            <img id="languageId"  onclick='switchLanguage()' src="resources/img/english.png" > <!-- Switch language--->   
+            <img id="languageId"  onclick="switchLanguage()" src="resources/img/english.png" > <!-- Switch language--->   
         </div>
 
     </header>
 
     <!---------------MAIN---------------->
-    <div class='main'>
+    <div class="main">
         <!------LEFT FILTER----------->
-        <div class='filterBox' id='filterBox'>
-            <button class='filter1' onclick='list_selected(this)'></button>
-            <button class='filter1' onclick='list_selected(this)'></button>
-            <button class='filter1' onclick='list_selected(this)'></button>
-            <button class='filter1' onclick='list_selected(this)'></button>
-            <button class='filter1' onclick='list_selected(this)'></button>
-            <button class='filter1' onclick='list_selected(this)'></button>
+        <div class="filterBox" id="filterBox">
+            <button class="filter1" onclick="list_selected(this)"></button>
+            <button class="filter1" onclick="list_selected(this)"></button>
+            <button class="filter1" onclick="list_selected(this)"></button>
+            <button class="filter1" onclick="list_selected(this)"></button>
+            <button class="filter1" onclick="list_selected(this)"></button>
+            <button class="filter1" onclick="list_selected(this)"></button>
         </div>
 
         <!------RIGHT CONTAINER BOX---------->
-        <div class='rightContainer'>
+        <div class="rightContainer">
             <!-------------BANNER-------->
             <img class="vipBanner" src="resources/images/VIP/banner.png">
             <!----DRINK PRODUCT BOX------>
-            <div class='productBox'>
+            <div class="productBox">
                <!----VIP DRINK--? currently hardcode-->
-                <div class='groupDrinkBox vipFavourite' id="vipSelected">
+                <div class="groupDrinkBox vipFavourite" id="vipSelected">
                 </div>
 
                  <!----DRINKS, THIS SHOULD BE SEARCHABLE----->
-                 <div class='groupDrinkBox ' id='groupDrinkBox'>                
+                 <div class="groupDrinkBox " id="groupDrinkBox">                
                 </div>
             </div>
         </div>
