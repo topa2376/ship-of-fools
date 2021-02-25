@@ -1,0 +1,182 @@
+/*--------------------BARTENDER----------------*/
+html,body,header{
+    max-width: 1195px !important; /* ipad size */
+    margin: auto;
+    width: auto;  
+}
+h1,h2,h3,h4,p,a,button{
+    font-family: Basic;
+
+}
+.wrapper{
+	margin: auto;
+	max-width: 1195px;
+ 	background-color: #fff;
+}
+/*-----------------HEADER---------------*/
+
+#header{
+	height: 133px;
+    background-color: #FFF; 
+    overflow: auto;
+	position: sticky;
+    top: 0;
+  	width: 100% ; 
+  	z-index: 100; 
+	display: flex;
+  	align-items: center;
+}
+
+.logo{
+    width: 111.8px;
+    height: 111.8px;
+    margin: 0 32px 0 24px;
+    object-fit: contain;
+    float: left;
+}
+
+#languageId{
+    float: right;
+    width: 56px;
+    height: 56px;
+	margin-left: auto;
+    object-fit: contain;
+    border-radius: 125px;
+}
+.nav_btn {
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	margin: 0 10px;
+	font-size: 24px;
+	cursor: pointer;
+	float: left;
+    width: 164px;
+	height: 60px;
+	display: inline-flex;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 23px;
+    border: #ffd130;
+    background-color: #ffd130;
+}
+#login {
+	margin: 0 5% 0 10px;
+}
+
+
+/*----------------MAIN CONTENT--------------*/
+.main{
+   overflow: hidden;
+   width: 100%;
+}
+/*----------------ACTIVE ORDERS--------------*/
+#orders{
+	margin-top: 30px;
+}
+.list{
+	width: 43%;
+  	height: 600px;
+ 	background-color: #3E33C9;
+}
+.list h1{
+	color: 0;
+	text-align: center;
+	margin: auto;
+}
+.list_item p {
+    height: 25px;
+    font-family: Basic;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+	text-align: left;
+    color: #000;
+}
+.itemNumber{
+	width:100px;
+	margin-left: 40px;
+}
+.itemName{
+	width:800px;
+	margin-left: 40px;
+	margin-right: auto;
+}
+.itemQuantity{
+	width:140px;
+	margin-right: 40px;
+}
+.itemPrice{
+	width:90px;
+	margin-right: 40px;
+}
+.itemCredit{
+	width:140px;
+	margin-right: 40px;
+	margin-left:auto;
+}
+
+.list .heading{
+	height: 90px;
+	display: flex;
+  	align-items: center;
+}
+#ordersRequested{
+	float: left;
+	margin-left: 5%;
+	background-color: #eeeeee;
+	overflow: auto;
+}
+#acceptedOrders{
+	float: right;
+	margin-right: 5%;
+	background-color: #eeeeee;
+	overflow: auto;
+}
+.list_item{
+	height: 80px;
+	margin-bottom: 3px;
+	background-color: #fff; 
+	display: flex;
+  	align-items: center;
+}
+
+
+/*----------ADDING/DELETING ORDERS-----------*/
+
+#bin_addOrder{
+	margin-top: 40px;
+	width: 100%;
+	display: inline-flex;
+  	align-items: center;
+}
+#bin{
+	float: left;
+	margin: 0 auto 0 5%;
+}
+
+#bin_addOrder .nav_btn {
+	width: 70%;
+	margin-right: 5%;
+}
+
+/*----------ORDERHISTORY-----------*/
+
+#ordersHistory{
+	width: auto;
+	margin: 50px 5%;
+	background-color: #eeeeee;
+	overflow: auto;
+}
+#orderHistoryH1Spacer{
+	width: 210px
+}
+#orderHistoryEdit_btn{
+	width: 200px;
+}
+
+
+

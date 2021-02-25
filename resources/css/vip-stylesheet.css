@@ -1,0 +1,144 @@
+/*--------------------HOME PAGE----------------*/
+html,body,header{
+    max-width: 1195px !important; /* ipad size */
+    margin: 0 auto;
+    width: auto;  
+}
+h1,h2,h3,h4,p,a,button{
+    font-family: Basic;
+
+}
+h2{
+    font-size: 40px;
+}
+p{
+    font-size: 24px;
+}
+/*-----------------HEADER---------------*/
+header{
+    height: 133px;
+    background-color: #FFF; 
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+   width: 100% ; 
+   z-index: 100; 
+}
+.mainHeader{
+   padding: 14px 20px 7.2px 24.6px;
+}
+.logo{
+    width: 111.8px;
+    height: 111.8px;
+    margin: 0 47.6px 0 0;
+    object-fit: contain;
+    float: left;
+}
+.shoppingCartBox{
+    float: left;
+}
+.shoppingCart{
+    width: 56px;
+    height: 56px;
+    margin: 29px 11px 26.8px 29px;
+    object-fit: contain;
+    float: left;
+}
+.subTotal{
+    float: left;
+    margin: 38px 40px 36.8px 11px;
+    font-family: Basic;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+.loginButton{
+    float: right;
+    width: 217px;
+    height: 57px;
+    margin: 25px 0px 29.8px 51px;
+    border-radius: 23px;
+    border: #ffd130;
+    background-color: #ffd130;
+    font-size : 24px;
+}
+
+.loginButtonVIP{
+    float: right;
+    width: 450px;
+    height: 57px;
+    margin: 25px 0px 29.8px 51px;
+    border-radius: 23px;
+    border: #ffd130;
+    background-color: #ffd130;
+    overflow: hidden;
+    /* display: none; */
+}/*-----VIPSWITCH----*/
+
+.loginButtonVIP a{
+    display: block;
+    margin: 10px 20px;
+    font-size : 24px;
+    text-decoration: none;
+    color: #000000;
+    float: left;
+}
+#languageId{
+    float: right;
+    width: 56px;
+    height: 56px;
+    margin: 30px 21px 29.8px 40px;
+    object-fit: contain;
+    border-radius: 125px;
+}
+
+
+
+/*----------------MAIN CONTENT--------------*/
+.main{
+   overflow: hidden;
+   width: 100%;
+   margin-top: 200px !important;
+}
+#goBackVIP{
+    width: 60px;
+    height: 30px;
+    margin-left:5%;
+}
+#profileBox, #historyBox{
+    width: 80%;
+    margin: 0 auto;
+}
+#profileVIPBox{
+    height: 270px;
+    margin: 0 33px 0 0;
+    padding: 26px 53px 18px 63px;
+    background-color: #eeeeee;
+    overflow: hidden;
+    margin-bottom: 150px;
+}
+.singleBox{
+    height: 270px;
+    margin: 0 33px 0 0;
+    padding: 26px 53px 18px 63px;
+    background-color: #eeeeee;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.edit{
+  width: 15%;
+  height: 70px;
+  border-radius: 24px;
+  border:#ffd130;
+  background-color: #ffd130;
+  font-size: 24px;
+  float:right ;
+  margin-bottom: ;
+}
+
