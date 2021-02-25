@@ -98,13 +98,12 @@ function allBeverages() {
     // Using a local variable to collect the items.
     var collector = [];
 
-    // The DB is stored in the variable DB2, with "spirits" as key element. If you need to select only certain
+    // The DB is stored in the variable engBev, with "spirits" as key element. If you need to select only certain
     // items, you may introduce filter functions in the loop... see the template within comments.
     //
-    for (i = 0; i < DB2.spirits.length; i++) {
-        collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp]);
+    for (i = 0; i < engBev.length; i++) {
+        collector.push([engBev[i].namn, engBev[i].varugrupp]);
     };
-    //
     return collector;
 }
 
@@ -118,19 +117,19 @@ function allStrongBeverages(strength) {
     //
     var collector = [];
 
-    // The DB is stored in the variable DB2, with "spirits" as key element. If you need to select only certain
+    // The DB is stored in the variable engBev, with "spirits" as key element. If you need to select only certain
     // items, you may introduce filter functions in the loop... see the template within comments.
     //
-    for (i = 0; i < DB2.spirits.length; i++) {
+    for (i = 0; i < engBev.length; i++) {
 
         // We check if the percentage alcohol strength stored in the data base is lower than the
         // given limit strength. If the limit is set to 14, also liqueuers are listed.
         //
-        if (percentToNumber(DB2.spirits[i].alkoholhalt) > strength) {
+        if (percentToNumber(engBev[i].alkoholhalt) > strength) {
 
             // The key for the beverage name is "namn", and beverage type is "varugrupp".
             //
-            collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp]);
+            collector.push([engBev[i].namn, engBev[i].varugrupp]);
         };
     };
 
@@ -145,8 +144,23 @@ function allStrongBeverages(strength) {
 //
 function beverageTypes() {
     var types = [];
-    for (i = 0; i < DB2.spirits.length; i++) {
-        addToSet(types, DB2.spirits[i].varugrupp);
+    for (i = 0; i < engBev.length; i++) {
+        addToSet(types, engBev[i].catgegory);
+    };
+    return types;
+}
+
+function selectedCategory(product){
+    if (product == 'All'){
+        return (engBev);
+    }
+
+    var types = [];
+
+    for (i = 0; i < engBev.length; i++) {
+        if (engBev[i].catgegory == product){
+            types.push(engBev[i]);
+        };
     };
     return types;
 }
