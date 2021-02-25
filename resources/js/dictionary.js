@@ -5,6 +5,7 @@ dirDict = {
     'home': ''
 }
 
+//dictionary for the text and lanaguges
 lanDict = {
     'keys' : ['login','total'],
     'en' : {
@@ -17,9 +18,12 @@ lanDict = {
     }
 }
 
+var topCategory = ['All', 'Vitt vin', 'Cognac', 'Okryddad sprit', 'Kryddad sprit', 'Whisky, Malt'];
+
 var cnst = {
+    'max_list_item' : 12,
     'start_val' : 0,
-    'start_res' : 0,
+    'start_res' : 0
 }
 
 
@@ -30,6 +34,3 @@ function get_string(key) {
 function get_product(key){
     return engBev[key];
 }
-
-=======
-var language=true;
