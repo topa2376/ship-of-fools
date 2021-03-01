@@ -21,7 +21,6 @@ function update_language(){
 //==============================
 
 
-
 //============================== Purchase Items ===============================
 function add_purchase(){
   //get content from page 
@@ -75,7 +74,6 @@ function remove_prod(){
   //removes the prod boxes.
 }
 
-
 //============================== Create item box ========================
 function drink_box(prod) {
   var dst = "groupDrinkBox";
@@ -90,9 +88,46 @@ function drink_box(prod) {
   name.textContent = prod.name + " (" + prod.alcoholstrength + ")"; 
   price.textContent = "SEK " + prod.priceinclvat;
   document.getElementById(dst).appendChild(div);
+  div.onclick = function() {add_to_cart(prod)};
   document.getElementById(prodDiv).appendChild(img);
   document.getElementById(prodDiv).appendChild(name);
   document.getElementById(prodDiv).appendChild(price);
+}
+
+//=============================== Create cart item ===========================
+
+function add_element_to_cart(prod){
+  var div = document.createElement('div'); // added element 
+  div.className = "basketElement";
+  div.id = "Basket Item" + prod.nr;
+  var name = document.createElement('p');
+  var price = document.createElement('p');
+  var quantity = document.createElement('input');
+  var deleteButton = document.createElement('button');
+  deleteButton.onclick = function() {remove_cart_items(div.id)};
+  name.textContent = prod.name;
+  price.textContent = prod.priceinclvat;
+  quantity.defaultValue = 1;
+  deleteButton.textContent = "Remove";
+  div.appendChild(name);
+  div.appendChild(price);
+  div.appendChild(quantity);
+  div.appendChild(deleteButton);
+  return div;
+}
+
+function add_to_cart (prod){
+  var newElement = add_element_to_cart(prod);
+  document.getElementById('myCart').appendChild(newElement);
+}
+
+function remove_cart_items(id){
+  var myNode = document.getElementById('myCart');
+  for (i = 0; i < myNode.childNodes.length; i++) {
+    if (myNode.childNodes[i].id == id){
+      myNode.removeChild(myNode.childNodes[i]);
+    }
+  }
 }
 
 //============================== Update and set View ========================
