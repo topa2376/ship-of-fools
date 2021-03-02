@@ -22,8 +22,69 @@
     width: 60%;
 }
 
-  /* Close Cart Button (x) */
+.cartHeading {
+  display: inline-block;
+  width: 392px;
+  height: 50px;
+  margin-left: 390px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px; 
 
+  font-family: Basic;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+}
+
+.cartItemsArea {
+  display: inline-block;
+  width: 400px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 450px;
+}
+
+.cartItem {
+  display: inline-block;
+  width: auto;
+  overflow: auto;
+  min-width: 250px;
+  height: 30px;
+  padding: 12px;
+  margin: 10px auto;
+  clear:right;
+
+  background-color: #dadada;
+  border-radius: 5px;
+  font-family: Basic;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  font-size: 24px;
+}
+
+.cartTotal {
+  display: inline-block;
+  width: auto;
+  overflow: auto;
+  min-width: 250px;
+  height: 30px;
+  padding: 12px;
+  margin-top: 10px;
+  clear:right;
+
+  background-color: #FFD130;
+  border-radius: 5px;
+  font-family: Basic;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  font-size: 24px;
+}
+
+  /* Close Cart Button (x) */
 .closeCart {
     position: absolute;
     right: 25px;
@@ -52,6 +113,25 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
   }
   
+  .payments {
+    display: inline-block;
+    margin-left: 32%;
+  }
+
+  .payBtn {
+    width: 200px;
+    height: 65px;
+    padding: 14px 20px;
+    margin: 8px 10px;
+    font-size: 24px;
+    color: black;
+    background-color: #FFD130;
+  }
+  
+  .payBtn:hover {
+    opacity: 0.8;
+  }
+
   /* Set a style for all buttons */
   button {
     font: Basic;

@@ -30,11 +30,25 @@
                 <div class="popCartContent cartAnimation">
 
                     <!-- Close button (x) -->
+                    
                     <span onclick="document.getElementById('myCart').style.display='none'" class="closeCart" title="Close Cart">&times;</span>
 
                     <!-- Content here -->
-                    <p>Cart content</p>
+                    <div id="cart-overview" class="cartHeading">Current order</div>
 
+                    <div class="cartItemsArea">
+                        <div id="cart-items" class="cartItem">Item name x1 - 40kr</div>
+                        <div id="cart-items" class="cartItem">Item name x1 - 40kr</div>
+                        <div id="cart-items" class="cartItem">Item name x1 - 40kr</div>
+                        <div id="cart-items" class="cartItem">Item name x1 - 40kr</div>
+                        <div id="cart-items" class="cartItem">Item name x1 - 40kr</div>
+                        <div id="cart-items" class="cartTotal">Your Total: 120kr</div>
+                    </div>      
+
+                    <div class="payments">
+                    <button type="button" class="payBtn">Swish</button>
+                    <button type="button" class="payBtn">Credit Card</button>
+                    </div>
                 </div>
                 </div>
                 <div class="subTotal" id="total"></div>
