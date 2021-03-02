@@ -128,10 +128,11 @@ header{
 /*----------FILTER-----------*/
 .filterBox{
     float: left;
-    width: 6% ;
+    width: 4% ;
     height: 573px;
-
-    background-color: #eeeded;
+    border-radius: 15px;
+    background-color: #ffd130;
+    position: fixed;
 }
 .productBox{
     float: right;
@@ -147,7 +148,7 @@ header{
     font-family: IcoFont;
     font-size: 36px;
     color: #616161;
-    background-color: #eeeded;
+    background-color: #ffd130;
     margin: 25px auto;
     object-fit: contain;
     display: block;
