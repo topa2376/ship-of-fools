@@ -10,6 +10,7 @@
     <script type="text/javascript" src="resources/js/dictionary.js"></script>
     <script type="text/javascript" src="resources/js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="resources/js/model.js"></script>
+    <script type="text/javascript" src="resources/js/DBLoaded.js"></script>
     <script type="text/javascript" src="resources/js/control.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet"> <!--FONT--->
@@ -40,8 +41,6 @@
                         <div id="cart-items" class="cartItem">Item name x1 - 40kr</div>
                         <div id="cart-items" class="cartItem">Item name x1 - 40kr</div>
                         <div id="cart-items" class="cartItem">Item name x1 - 40kr</div>
-                        <div id="cart-items" class="cartItem">Item name x1 - 40kr</div>
-                        <div id="cart-items" class="cartItem">Item name x1 - 40kr</div>
                         <div id="cart-items" class="cartTotal">Your Total: 120kr</div>
                     </div>      
 
@@ -69,17 +68,17 @@
 
                 <div class="container">
                 <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <input type="text" placeholder="Enter Username" id="uname" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Enter Password" id="psw" required>
                     
-                <button type="submit">Login</button>
+                <button type="button" onclick="getInfo()"; userDetails(userName) id="loginbutton">Login</button>
                 <label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                    <input type="checkbox" checked="checked" id="remember"> Remember me
                 </label>
                 </div>
-
+                    <onclick="validate"()>
                 <div class="container" style="background-color:#f1f1f1">
                 <button type="button" onclick="document.getElementById('myLogin').style.display='none'" class="cancelbtn">Cancel</button>
                 <span class="psw"><a href="#">Forgot password?</a></span>
