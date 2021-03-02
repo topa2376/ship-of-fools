@@ -8,12 +8,12 @@ h1,h2,h3,h4,p,a,button{
     font-family: Basic;
 
 }
-/*-----------------Icon for cart---------------*/
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('../fonts/fontawesome-webfont.ttf') format('truetype');
-  }
+/*-----------------Icons for buttons---------------*/
 
+  @font-face {
+    font-family: 'IcoFont';
+    src: url('../fonts/icofont.ttf') format('truetype');
+  }
 
 /*-----------------HEADER---------------*/
 header{
@@ -42,7 +42,7 @@ header{
     width: 56px;
     height: 56px;
     margin: 29px 11px 26.8px 29px;
-    font-family: FontAwesome;
+    font-family: IcoFont;
     color:white;
     font-size: 28px;
     object-fit: contain;
@@ -144,9 +144,11 @@ header{
     display: none; /*-----VIPSWITCH----*/
 }
 .filter1{
-    width: 21px;
-    height: 37.1px;
-    margin:25px auto ;
+    font-family: IcoFont;
+    font-size: 36px;
+    color: #616161;
+    background-color: #eeeded;
+    margin: 25px auto;
     object-fit: contain;
     display: block;
 }
