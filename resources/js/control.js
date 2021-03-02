@@ -20,6 +20,74 @@ function update_language(){
 }
 //==============================
 
+//Test function
+function getInfo() {
+var username = document.getElementById("uname").value
+var password = document.getElementById("psw").value
+var login = false
+//console.log("Your username is" + username + " and password is" + password)
+for(i = 0; i < DB.users.length; i++){
+    if(username == DB.users[i].username && password == DB.users[i].password) { login = true }
+ }
+   // return console.log("Your username and/or password is wrong" + Username +" " + Password)
+   // for(i = 0; i < DB.users.length; i++)
+   // if(username != DB.users[i].username && password != DB.users[i].password) {  window.location.href = "https://datahahah.ytmnd.com"}
+ //else {  window.location.href = "https://datahahah.ytmnd.com"}  - inget av det här funkar, else tar över if-funktionen.
+
+    //window.location.href = "vipProfile.html"
+
+
+    if (login == true) {window.location.href = "vipProfile.html"}
+    else { window.location.href = "https://datahahah.ytmnd.com"}
+ // - inget av det här funkar, else tar över if-funktionen.
+
+
+    }
+
+
+
+function userDetails(userName) {
+    var userCollect = [];
+    var userID;
+    var userIndex;
+    var account;
+
+    // First we find the user ID of the selected user. We also save the index number for the record in the JSON
+    // structure.
+    //
+    for (i = 0; i < DB.users.length; i++) {
+        if (DB.users[i].username == userName) {
+            userID = DB.users[i].user_id;
+            userIndex = i;
+        };
+    };
+
+    // We get the current account status from another table in the database, account. We store this in
+    // a variable here for convenience.
+    //
+    for (i = 0; i < DB.account.length; i++) {
+        if (DB.account[i].user_id == userID) {
+            account = DB.account[i].creditSEK;
+        }
+    };
+
+    // This is the way to add the details you want from the db into your own data structure.
+    // If you want to change the details, then just add or remove items accordingly below.
+    userCollect.push(
+        DB.users[userIndex].user_id,
+        DB.users[userIndex].username,
+        DB.users[userIndex].first_name,
+        DB.users[userIndex].last_name,
+        DB.users[userIndex].email,
+
+        account
+    );
+
+    return userCollect;
+}
+
+
+
 
 //============================== Purchase Items ===============================
 function add_purchase(){
