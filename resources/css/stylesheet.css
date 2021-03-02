@@ -39,12 +39,11 @@ header{
     float: left;
 }
 .shoppingCart{
-    width: 56px;
-    height: 56px;
-    margin: 29px 11px 26.8px 29px;
+    height: 75px;
+    margin: 20px 11px 26.8px 29px;
     font-family: IcoFont;
-    color:white;
-    font-size: 28px;
+    color:#333333;
+    font-size: 36px;
     object-fit: contain;
     border: #ffd130;
     background-color: #ffd130;
@@ -147,7 +146,7 @@ header{
 .filter1{
     font-family: IcoFont;
     font-size: 36px;
-    color: #616161;
+    color: #4b4b4b;
     background-color: #ffd130;
     margin: 25px auto;
     object-fit: contain;
