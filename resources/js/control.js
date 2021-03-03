@@ -179,33 +179,45 @@ function drink_box(prod) {
 //=============================== Create cart item ===========================
 
 function add_element_to_cart(prod){
-  var div = document.createElement('div'); // create the div  
-  div.className = "basketElement"; //name its class
-  div.id = "Basket Item" + prod.nr; //name its id 
-
-  //elements of the div
-  var name = document.createElement('p');
-  var price = document.createElement('p');
+  var div = document.createElement('div'); // added element 
+  div.className = "basketElement";
+  div.id = "Basket Item" + prod.nr;
+  var name = document.createElement('itemTitle');
+  var price = document.createElement('itemPrice');
   var quantity = document.createElement('input');
   var deleteButton = document.createElement('button');
-
-  //specifiy the elements of the div
-  deleteButton.onclick = function() {remove_cart_items(div.id)}; // set the delete button 
-  name.textContent = prod.name; // insert text
-  price.textContent = prod.priceinclvat; //insert price text
-  quantity.defaultValue = 1; // set default quantity 
-  deleteButton.textContent = "Remove"; 
-
-  //create the elements 
+  var divider = document.createElement('hr');
+  deleteButton.onclick = function() {remove_cart_items(div.id)};
+  name.textContent = prod.name;
+  price.textContent = prod.priceinclvat;
+  quantity.defaultValue = 1;
+  deleteButton.textContent = "Remove";
   div.appendChild(name);
   div.appendChild(price);
-  div.appendChild(quantity);
   div.appendChild(deleteButton);
 
   //return the complete div so that it can be appened to the cart
   return div;
 }
 
+  div.appendChild(quantity);
+  div.appendChild(divider);
+  return div;
+}
+
+function add_to_cart (prod){
+  var newElement = add_element_to_cart(prod);
+  document.getElementById('cartItems').appendChild(newElement);
+}
+
+function remove_cart_items(id){
+  var myNode = document.getElementById('cartItems');
+  for (i = 0; i < myNode.childNodes.length; i++) {
+    if (myNode.childNodes[i].id == id){
+      myNode.removeChild(myNode.childNodes[i]);
+    }
+  }
+}
 
 //============================== Update and set View ========================
 
