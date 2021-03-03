@@ -44,8 +44,6 @@ for(i = 0; i < DB.users.length; i++){
 
     }
 
-
-
 function userDetails(userName) {
     var userCollect = [];
     var userID;
@@ -79,30 +77,28 @@ function userDetails(userName) {
         DB.users[userIndex].first_name,
         DB.users[userIndex].last_name,
         DB.users[userIndex].email,
-
         account
     );
 
     return userCollect;
 }
 
-
-
-
 //============================== Purchase Items ===============================
-function add_purchase(){
-  //get content from page 
-  //perform operation 
-  //update model 
-  //update view
+
+function add_to_cart (prod){
+  var newElement = add_element_to_cart(prod); // create cart item 
+  document.getElementById('myCart').appendChild(newElement); // append to cart div
 }
 
-function sub_purchase(){
-  //get content from page 
-  //perform operation 
-  //update model 
-  //update view
+function remove_cart_items(id){
+  var myNode = document.getElementById('myCart'); // find the cart
+  for (i = 0; i < myNode.childNodes.length; i++) { 
+    if (myNode.childNodes[i].id == id){ //if the cart item is the same as the id we want
+      myNode.removeChild(myNode.childNodes[i]);  // remove from cart 
+    }
+  }
 }
+
 
 function change_quantity(){
   //get content from page 
@@ -113,6 +109,12 @@ function change_quantity(){
 
 function update_total(result){
 }
+
+function show_drink_dets(prod){
+  console.log (prod);
+
+}
+
 
 
 //============================== Sort and Select Catagories ========================
@@ -144,22 +146,34 @@ function remove_prod(){
 
 //============================== Create item box ========================
 function drink_box(prod) {
-  var dst = "groupDrinkBox";
-  var div = document.createElement('div');
-  var prodDiv = prod.articleid;
-  div.className = 'singleDrinkBox';
-  div.id = prodDiv;
-  var img = document.createElement('img');
-  var name = document.createElement('p');
-  var price = document.createElement('p');
+  var prodDiv = prod.articleid; //name the div
+  var dst = "groupDrinkBox"; //get the name of the head div
+
+  var div = document.createElement('div'); //create the div
+  div.className = 'singleDrinkBox';  //create the div class name for css code
+  div.id = prodDiv; //make the prod id into the div id
+
+  var img = document.createElement('img'); //for storing the img
+  var name = document.createElement('p'); //for storing the name
+  var price = document.createElement('p'); //for storing the price
+  var addToCartButton = document.createElement('button');  //for the add to cart button 
+
   img.src = prod.img;
   name.textContent = prod.name + " (" + prod.alcoholstrength + ")"; 
   price.textContent = "SEK " + prod.priceinclvat;
   document.getElementById(dst).appendChild(div);
-  div.onclick = function() {add_to_cart(prod)};
-  document.getElementById(prodDiv).appendChild(img);
-  document.getElementById(prodDiv).appendChild(name);
-  document.getElementById(prodDiv).appendChild(price);
+  addToCartButton.textContent = 'Add to Cart';
+  addToCartButton.className = 'addToCartButton';
+
+  //functionalities
+  img.onclick = function() {show_drink_dets(prod)}; // for showing drinks details 
+  addToCartButton.onclick = function() {add_to_cart(prod)}; //add to cart function
+
+  //add all elements to the div 
+  document.getElementById(prodDiv).appendChild(img); 
+  document.getElementById(prodDiv).appendChild(name);  
+  document.getElementById(prodDiv).appendChild(price); 
+  document.getElementById(prodDiv).appendChild(addToCartButton);
 }
 
 //=============================== Create cart item ===========================
@@ -181,6 +195,11 @@ function add_element_to_cart(prod){
   div.appendChild(name);
   div.appendChild(price);
   div.appendChild(deleteButton);
+
+  //return the complete div so that it can be appened to the cart
+  return div;
+}
+
   div.appendChild(quantity);
   div.appendChild(divider);
   return div;
@@ -201,15 +220,11 @@ function remove_cart_items(id){
 }
 
 //============================== Update and set View ========================
-function update_view(){
-  //change the dict elements 
-  //update all the product elements
-}
 
-function intialize_view() {
+function update_view() {
   // place all the products 
   for (i = 0; i < 12; i++){
-    var prod = get_product(i);
+    var prod = get_product(i); //THIS MAY NEED TO BE CHANGED TO JSON
     drink_box(prod);
   }
   set_categories ();
@@ -219,5 +234,5 @@ function intialize_view() {
 // We don't update the view the first time until the document is ready
 // loading.
 $(document).ready(function() {
-  intialize_view();
+  update_view();
 })
