@@ -20,7 +20,6 @@ function update_language(){
 }
 //==============================
 
-//Test function
 function getInfo() {
 var username = document.getElementById("uname").value
 var password = document.getElementById("psw").value
@@ -32,15 +31,16 @@ for(i = 0; i < DB.users.length; i++){
    // return console.log("Your username and/or password is wrong" + Username +" " + Password)
    // for(i = 0; i < DB.users.length; i++)
    // if(username != DB.users[i].username && password != DB.users[i].password) {  window.location.href = "https://datahahah.ytmnd.com"}
- //else {  window.location.href = "https://datahahah.ytmnd.com"}  - inget av det här funkar, else tar över if-funktionen.
+ //else {  window.location.href = "https://datahahah.ytmnd.com"} 
 
     //window.location.href = "vipProfile.html"
 
 
     if (login == true) {window.location.href = "vipProfile.html"}
     else { window.location.href = "https://datahahah.ytmnd.com"}
- // - inget av det här funkar, else tar över if-funktionen.
+ 
     }
+
 
 
 
