@@ -109,7 +109,7 @@ header{
 .main{
    overflow: hidden;
    width: 100%;
-   margin-top: 150px !important;
+   margin-top: 200px !important;
 }
 /*----------FILTER-----------*/
 .filterBox{
@@ -144,7 +144,6 @@ header{
     margin: 10px auto;
     object-fit: contain;
 }
-
 .filter2{
     width: 19px;
     height: 43px;
@@ -195,32 +194,20 @@ h2{
     padding: 0.5%;
     float: left;
     position: relative;
-
 }
-.singleDrinkBox p{
-    padding-left: 1.5rem;
-    margin: 10px;
+.singleDrinkText{
+    width: 222px;
+    height: 25px;
+    font-family: Basic;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
 }
-.singleDrinkBox img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-.addToCartButton{
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 30px;
-    margin-top: 0;
-    border: #ffd130;
-    background-color: #ffd130;
-    font-size : 16px;
-    margin-bottom: 2rem;
-}
-
 .vipFavourite{
    display: none;
  /*-----VIPSWITCH----*/
