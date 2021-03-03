@@ -57,6 +57,30 @@ header{
     text-align: left;
     color: #000000;
 }
+.VIPinfo{
+    float: right;
+    width: 300px;
+    height: 57px;
+    margin: 25px 0px 29.8px 51px;
+    border-radius: 23px;
+    border: #000000;
+    border-width:4px;
+   //border-style:solid;
+    background-color: #ffffff;
+    overflow: hidden;
+    font-size : 18px;
+        font-family: Basic;
+
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.54;
+        letter-spacing: normal;
+        text-align: center;
+
+    }
+
+
 .loginButton{
     float: right;
     width: 217px;
@@ -68,17 +92,25 @@ header{
     font-size : 24px;
 }
 
-.loginButtonVIP{
-    float: right;
-    width: 450px;
-    height: 57px;
-    margin: 25px 0px 29.8px 51px;
-    border-radius: 23px;
-    border: #ffd130;
-    background-color: #ffd130;
-    overflow: hidden;
+
+
+    .loginButtonVIP{
+        float: right;
+        width: 150px;
+        height: 57px;
+        margin: 25px 0px 29.8px 51px;
+        border-radius: 23px;
+        border: #ffd130;
+        background-color: #ffd130;
+        overflow: hidden;
+
+
+
     /* display: none; */
 }/*-----VIPSWITCH----*/
+
+
+
 
 .loginButtonVIP a{
     display: block;
@@ -88,6 +120,7 @@ header{
     color: #000000;
     float: left;
 }
+
 #languageId{
     float: right;
     width: 56px;
@@ -95,7 +128,10 @@ header{
     margin: 30px 21px 29.8px 40px;
     object-fit: contain;
     border-radius: 125px;
+
+
 }
+
 
 
 
