@@ -116,8 +116,9 @@ header{
 /*----------FILTER-----------*/
 .filterBox{
     float: left;
-    width: 4% ;
-    height: 573px;
+    min-width: 4%;
+    height: auto;
+    margin-left: 40px;
     border-radius: 15px;
     background-color: #ffd130;
     position: fixed;
@@ -138,15 +139,15 @@ header{
     flex-direction: column;
 }
 
-.filter1{
-    position: relative;
+.filter1 {
+    display: block;
     font-family: IcoFont;
     font-size: 36px;
     color: #4b4b4b;
     background-color: #ffd130;
     margin: 25px auto;
+    margin: 10px auto;
     object-fit: contain;
-    display: block;
 }
 
 .filter2{
