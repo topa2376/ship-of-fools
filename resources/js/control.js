@@ -168,10 +168,11 @@ function add_element_to_cart(prod){
   var div = document.createElement('div'); // added element 
   div.className = "basketElement";
   div.id = "Basket Item" + prod.nr;
-  var name = document.createElement('p');
-  var price = document.createElement('p');
+  var name = document.createElement('itemTitle');
+  var price = document.createElement('itemPrice');
   var quantity = document.createElement('input');
   var deleteButton = document.createElement('button');
+  var divider = document.createElement('hr');
   deleteButton.onclick = function() {remove_cart_items(div.id)};
   name.textContent = prod.name;
   price.textContent = prod.priceinclvat;
@@ -179,18 +180,19 @@ function add_element_to_cart(prod){
   deleteButton.textContent = "Remove";
   div.appendChild(name);
   div.appendChild(price);
-  div.appendChild(quantity);
   div.appendChild(deleteButton);
+  div.appendChild(quantity);
+  div.appendChild(divider);
   return div;
 }
 
 function add_to_cart (prod){
   var newElement = add_element_to_cart(prod);
-  document.getElementById('myCart').appendChild(newElement);
+  document.getElementById('cartItems').appendChild(newElement);
 }
 
 function remove_cart_items(id){
-  var myNode = document.getElementById('myCart');
+  var myNode = document.getElementById('cartItems');
   for (i = 0; i < myNode.childNodes.length; i++) {
     if (myNode.childNodes[i].id == id){
       myNode.removeChild(myNode.childNodes[i]);
