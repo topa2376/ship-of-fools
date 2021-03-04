@@ -154,7 +154,13 @@ function drink_box(prod) {
   name.textContent = prod.name + " (" + prod.alcoholstrength + ")"; 
   price.textContent = "SEK " + prod.priceinclvat;
   document.getElementById(dst).appendChild(div);
-  div.onclick = function() {add_to_cart(prod)};
+  div.onclick = function() {
+  add_to_cart(prod)
+  //play sound
+  var audio = new Audio('./resources/addToCart.mp3');
+  audio.play();
+  //play sound end
+  };
   document.getElementById(prodDiv).appendChild(img);
   document.getElementById(prodDiv).appendChild(name);
   document.getElementById(prodDiv).appendChild(price);
