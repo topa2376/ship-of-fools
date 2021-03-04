@@ -20,27 +20,35 @@ function update_language(){
 }
 //==============================
 
+//LoginFunction
 function getInfo() {
-var username = document.getElementById("uname").value
-var password = document.getElementById("psw").value
-var login = false
+    var username = document.getElementById("uname").value
+    var password = document.getElementById("psw").value
+    var typeofuser = 1
+    var login = 1
 //console.log("Your username is" + username + " and password is" + password)
-for(i = 0; i < DB.users.length; i++){
-    if(username == DB.users[i].username && password == DB.users[i].password) { login = true }
- }
+    for(i = 0; i < DB.users.length; i++){
+        var typeofuser = DB.users[i].type_of_user
+        if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "VIP") { login = 2 }
+        else if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "Bartender") { login = 3 }
+      }
+ //for(i = 0; i < DB.users.length; i++){
+   //    var typeofuser = 1
+     // else if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "bartender") { login = 3 }
+ //}
    // return console.log("Your username and/or password is wrong" + Username +" " + Password)
    // for(i = 0; i < DB.users.length; i++)
    // if(username != DB.users[i].username && password != DB.users[i].password) {  window.location.href = "https://datahahah.ytmnd.com"}
- //else {  window.location.href = "https://datahahah.ytmnd.com"} 
+ //else {  window.location.href = "https://datahahah.ytmnd.com"}
 
     //window.location.href = "vipProfile.html"
 
 
-    if (login == true) {window.location.href = "vipProfile.html"}
-    else { window.location.href = "https://datahahah.ytmnd.com"}
- 
-    }
+    if (login == 2 ) {window.location.href = "vipProfile.html"}
+    else if (login == 3 ) {window.location.href = "bartenderMain.html"}
+    //else { window.location.href = "https://datahahah.ytmnd.com"}
 
+    }
 
 
 
