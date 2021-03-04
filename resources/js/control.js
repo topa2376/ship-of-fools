@@ -20,7 +20,7 @@ function update_language(){
 }
 //==============================
 
-//LoginFunction
+var userID = 0
 function getInfo() {
     var username = document.getElementById("uname").value
     var password = document.getElementById("psw").value
@@ -28,9 +28,10 @@ function getInfo() {
     var login = 1
 //console.log("Your username is" + username + " and password is" + password)
     for(i = 0; i < DB.users.length; i++){
-        var typeofuser = DB.users[i].type_of_user
-        if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "VIP") { login = 2 }
-        else if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "Bartender") { login = 3 }
+     var typeofuser = DB.users[i].type_of_user
+        if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "VIP") { login = 2 && userID = DB.users[i].user_id  }
+        else if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "Bartender") { login = 3 && userID = DB.users[i].user_id }
+        console.log(userID) //needs to be fixed
       }
  //for(i = 0; i < DB.users.length; i++){
    //    var typeofuser = 1
@@ -42,14 +43,14 @@ function getInfo() {
  //else {  window.location.href = "https://datahahah.ytmnd.com"}
 
     //window.location.href = "vipProfile.html"
-
+//var userID == DB.users[i].user_id;
+    //var userID == getElementById(user_id)//DB.users[i].user_id.value  var userID == DB.users[i].user_id;
 
     if (login == 2 ) {window.location.href = "vipProfile.html"}
     else if (login == 3 ) {window.location.href = "bartenderMain.html"}
-    //else { window.location.href = "https://datahahah.ytmnd.com"}
+    else { window.location.href = "https://datahahah.ytmnd.com"}
 
     }
-
 
 
 function userDetails(userName) {
