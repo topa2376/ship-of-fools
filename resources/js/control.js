@@ -22,29 +22,38 @@ function update_language(){
 }
 //==============================
 
-//Test function
+var userID = null;
 function getInfo() {
-var username = document.getElementById("uname").value
-var password = document.getElementById("psw").value
-var login = false
-//console.log("Your username is" + username + " and password is" + password)
-for(i = 0; i < DB.users.length; i++){
-    if(username == DB.users[i].username && password == DB.users[i].password) { login = true }
- }
-   // return console.log("Your username and/or password is wrong" + Username +" " + Password)
-   // for(i = 0; i < DB.users.length; i++)
-   // if(username != DB.users[i].username && password != DB.users[i].password) {  window.location.href = "https://datahahah.ytmnd.com"}
- //else {  window.location.href = "https://datahahah.ytmnd.com"}  - inget av det här funkar, else tar över if-funktionen.
-
-    //window.location.href = "vipProfile.html"
-
-
-    if (login == true) {window.location.href = "vipProfile.html"}
-    else { window.location.href = "https://datahahah.ytmnd.com"}
- // - inget av det här funkar, else tar över if-funktionen.
-
-
+    var username = document.getElementById("uname").value
+    var password = document.getElementById("psw").value
+    var typeofuser = null;
+	
+	//looks though all the users in DBloaded.js and sets usertype into the corresponging type if
+	//user+password matches
+    for(i = 0; i < DB.users.length; i++){
+		
+        if(username == DB.users[i].username && password == DB.users[i].password) { 
+			typeofuser = DB.users[i].credentials;
+			userID = DB.users[i].user_id;
+		}
+        
     }
+	// checks which type of user logged in and switches onto the corresponding page or error if no user+password matched
+	switch (typeofuser) {
+  		case "0":
+			window.location.href = "bartenderMain.html";
+			console.log(userID);
+			break;
+  		case "3":
+			window.location.href = "vipProfile.html";
+			console.log(userID);
+			break;
+  		default:
+			window.location.href = "https://datahahah.ytmnd.com";
+			console.log(userID);
+	}
+}
+
 
 function userDetails(userName) {
     var userCollect = [];
@@ -189,9 +198,18 @@ function drink_box(prod) {
   addToCartButton.onclick = function() {add_to_cart(prod)}; //add to cart function
 
   //add all elements to the div 
-  document.getElementById(prodDiv).appendChild(img); 
-  document.getElementById(prodDiv).appendChild(name);  
-  document.getElementById(prodDiv).appendChild(price); 
+  div.onclick = function() {
+  add_to_cart(prod)
+  //play sound
+  var audio = new Audio('./resources/addToCart.mp3');
+  audio.play();
+  //play sound end
+  }
+  
+  //add all elements to the div 
+  document.getElementById(prodDiv).appendChild(img);
+  document.getElementById(prodDiv).appendChild(name);
+  document.getElementById(prodDiv).appendChild(price);
   document.getElementById(prodDiv).appendChild(addToCartButton);
 }
 
