@@ -184,6 +184,83 @@ function percentToNumber(percentStr) {
 }
 
 // =====================================================================================================
+
+//========================BARTENDER MENU PAGE WITH 4 FOUNCTION BELOW========================================================================
+
+
+
+//=============Show all drinks in Available options box ==========================
+
+list()
+function list() {
+    var html = '';
+    engBev.forEach((ele, i) => {
+        html += `
+        <div class="list_item">
+            <!----articleid--->
+            <p class='drinkID'>${ele.articleid}</p>
+            <!----articleid--->
+            <p class='drinkName'>${ele.name}-${ele.alcoholstrength}</p>
+            <!----name+(alcoholstrength)--->
+            <p class="drinkPrice">${ele.priceinclvat}</p>
+            <!----priceinclvat--->
+            <a href='javascript:;' class="nav_btn" class="addToMenu" onClick='addlist(${i},this)'>Add to Menu</a>
+        </div>
+        `
+    });
+    document.querySelector('.listbox').innerHTML = html;
+}
+
+
+//============click 'add to menu', the drink will be add to the menu，and it will be removed from available options==========================
+
+function addlist(index, e) {
+    console.log(e.parentNode.childNodes)
+    var articleid = e.parentNode.childNodes[3].innerHTML;
+    var drinkName = e.parentNode.childNodes[7].innerHTML;
+    var drinkPrice = e.parentNode.childNodes[11].innerHTML;
+    var html = `
+        <div class="list_item" id=''>
+            <!----articleid--->
+            <p class='drinkID'>${articleid}</p>
+            <!----articleid--->
+            <p class='drinkName'>${drinkName}</p>
+            <!----name+(alcoholstrength)--->
+            <p class="drinkPrice">${drinkPrice}</p>
+            <!---priceinclvat--->
+            <a onClick="deleted(${index},this)" class="deleteFromMenu"><img class="delete" src="resources/Images/delete.png"></a>
+            <form class='changePriceBox'>
+                <label>SEK</label>
+                <input type="text" value='${drinkPrice}'>
+                <a href='javascript:;' class="nav_btn" class="changePrice" onClick="changeprice(${index},this)">Change price</a>
+            </form>
+        </div>
+    `;
+    var length = document.querySelectorAll('.addlist .list_item').length;
+    console.log(length);
+    document.querySelector('.addlist').insertAdjacentHTML("beforeEnd", html);
+    document.querySelector(`.listbox .list_item:nth-child(${index + 1})`).style.display = 'none'
+}
+
+
+
+//============click"x",the drink will be removed from Menu，and show in available options==========================
+
+function deleted(index, e) {
+    e.parentNode.remove();
+    document.querySelector(`.listbox .list_item:nth-child(${index + 1})`).style.display = 'block'
+}
+
+
+//============In the Menu,write price+click "change price",the price will be changed.==========================
+
+
+function changeprice(index, e) {
+    var price = e.parentNode.childNodes[3].value;
+    console.log(price)
+    e.parentNode.parentNode.childNodes[11].innerHTML = price;
+    document.querySelector(`.listbox .list_item:nth-child(${index + 1}) .drinkPrice`).innerHTML = price;
+}
 // =====================================================================================================
 // END OF FILE
 // =====================================================================================================
