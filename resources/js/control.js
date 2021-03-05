@@ -48,7 +48,7 @@ function getInfo() {
 
     if (login == 2 ) {window.location.href = "vipProfile.html"}
     else if (login == 3 ) {window.location.href = "bartenderMain.html"}
-    else { window.location.href = "https://datahahah.ytmnd.com"}
+    else if { window.location.href = "https://datahahah.ytmnd.com"}
 
     }
 
