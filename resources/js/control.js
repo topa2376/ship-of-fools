@@ -29,9 +29,13 @@ function getInfo() {
 //console.log("Your username is" + username + " and password is" + password)
     for(i = 0; i < DB.users.length; i++){
      var typeofuser = DB.users[i].type_of_user
-        if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "VIP") { login = 2, && userID = DB.users[i].user_id  }
-        else if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "Bartender") { login = 3, && userID = DB.users[i].user_id }
-        console.log(userID) //needs to be fixed
+        if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "VIP")
+         { userID = DB.users[i].user_id; login = 2 }
+
+        if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "Bartender")
+         { userID = DB.users[i].user_id; login = 3 }
+
+        console.log(userID + "your login is" + login)
       }
  //for(i = 0; i < DB.users.length; i++){
    //    var typeofuser = 1
@@ -48,7 +52,7 @@ function getInfo() {
 
     if (login == 2 ) {window.location.href = "vipProfile.html"}
     else if (login == 3 ) {window.location.href = "bartenderMain.html"}
-    else if { window.location.href = "https://datahahah.ytmnd.com"}
+    else if (login == 1 )  { window.location.href = "https://datahahah.ytmnd.com"}
 
     }
 
