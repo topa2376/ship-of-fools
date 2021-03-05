@@ -1,0 +1,186 @@
+/*--------------------BARTENDER----------------*/
+html,body,header{
+    max-width: 1195px !important; /* ipad size */
+    margin: auto;
+    width: auto;  
+}
+h1,h2,h3,h4,p,a,button,label{
+    font-family: Basic;
+
+}
+h2{
+	font-size: 40px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.54;
+	letter-spacing: normal;
+	text-align: left;
+	color: #000000;
+	text-align: center;
+	margin:0 auto
+  }
+  label{
+	  font-size: 24px;
+  }
+.wrapper{
+	margin: auto;
+	max-width: 1195px;
+ 	background-color: #fff;
+}
+/*-----------------HEADER---------------*/
+
+#header{
+	height: 133px;
+    background-color: #FFF; 
+    overflow: auto;
+	position: sticky;
+    top: 0;
+  	width: 100% ; 
+  	z-index: 100; 
+	display: flex;
+  	align-items: center;
+}
+
+.logo{
+    width: 111.8px;
+    height: 111.8px;
+    margin: 0 32px 0 24px;
+    object-fit: contain;
+    float: left;
+}
+
+#languageId{
+    float: right;
+    width: 56px;
+    height: 56px;
+	margin-left: auto;
+    object-fit: contain;
+    border-radius: 125px;
+}
+.nav_btn {
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	margin: 0 10px;
+	font-size: 24px;
+	cursor: pointer;
+	float: right;
+    width: 164px;
+	height: 60px;
+	display: inline-flex;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 23px;
+    border: #ffd130;
+    background-color: #ffd130;
+}
+#login {
+	margin: 0 5% 0 10px;
+}
+
+.main{
+	overflow: hidden;
+	width: 100%;
+ }
+/*----------------Menu--------------*/
+
+
+#orders{
+	margin-top: 30px;
+}
+.list{
+	width: 43%;
+  	height: 600px;
+ 	background-color: #3E33C9;
+}
+.list .heading{
+	height: 90px;
+	display: flex;
+  	align-items: center;
+}
+
+
+.list_item{
+	height: 80px;
+	margin-bottom: 3px;
+	background-color: #fff; 
+  	align-items: center;
+	overflow: hidden;
+}
+
+.list_item p {
+    height: 25px;
+    font-family: Basic;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+	text-align: left;
+    color: #000;
+}
+
+#bartenderMenu{
+	width: auto;
+	margin: 50px 5%;
+	background-color: #eeeeee;
+	overflow: auto;
+}
+
+.drinkID{
+	float: left;
+	margin-left: 40px;
+}
+.drinkName{
+	float: left;
+	margin-left: 40px;
+	
+}
+.drinkPrice{
+	float: left;
+	margin-left: 40px;
+}
+.changePriceBox{
+	width: 390px;
+	float: right;
+	margin-right: 40px;
+	margin-top: 10px;
+}
+.changePriceBox input{
+	width: 150px;
+	height: 50px;
+	margin-top: 5px;
+}	
+.changePrice{
+	float: right;
+	margin-left: 0 !important;
+
+
+}
+.deleteFromMenu{
+	margin-top: 25px;
+	float: right;
+	margin-right: 40px;
+}
+
+
+
+
+
+
+/*----------Options that to be added-----------*/
+
+#optionBox{
+	width: auto;
+	margin: 50px 5%;
+	background-color: #eeeeee;
+	overflow: auto;
+}
+#addToMenu,.addToMenu{
+	float: right;
+	margin-right: 40px;
+	margin-top: 10px;
+}
+
