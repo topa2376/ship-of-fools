@@ -29,8 +29,8 @@ function getInfo() {
 //console.log("Your username is" + username + " and password is" + password)
     for(i = 0; i < DB.users.length; i++){
      var typeofuser = DB.users[i].type_of_user
-        if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "VIP") { login = 2 && userID = DB.users[i].user_id  }
-        else if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "Bartender") { login = 3 && userID = DB.users[i].user_id }
+        if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "VIP") { login = 2, && userID = DB.users[i].user_id  }
+        else if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "Bartender") { login = 3, && userID = DB.users[i].user_id }
         console.log(userID) //needs to be fixed
       }
  //for(i = 0; i < DB.users.length; i++){
