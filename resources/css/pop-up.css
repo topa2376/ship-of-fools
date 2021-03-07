@@ -207,7 +207,7 @@ input[type=text], input[type=password] {
 
   /* Set a style for all buttons */
   button {
-    font: Basic;
+    font-family: Basic;
     font-size: 18px;
     background: #FFD130;
     border-radius: 23px;
@@ -240,8 +240,8 @@ input[type=text], input[type=password] {
   }
   
   img.avatar {
-    width: 256px;
-    height: 256px;
+    width: 40%;
+    height: 40%;
     border-radius: 50%;
   }
   
@@ -250,7 +250,7 @@ input[type=text], input[type=password] {
   }
   
   .vip-login-heading {
-      font: Basic;
+      font-family: Basic;
       font-size: 24px;
       text-align: center;
       padding-bottom: 10px;
@@ -281,7 +281,7 @@ input[type=text], input[type=password] {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 30%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button (x) */
@@ -316,14 +316,29 @@ input[type=text], input[type=password] {
     from {transform: scale(0)} 
     to {transform: scale(1)}
   }
-  
-  /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
+
+  /* Portrait */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: portrait)  {
+  .popLoginContent {
+    background-color: #fefefe;
+    margin: 0% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 75%; /* Could be more or less, depending on screen size */
   }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) {
+    .popLoginContent {
+      background-color: #fefefe;
+      margin: 0% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 60%; /* Could be more or less, depending on screen size */
+    }
+}
