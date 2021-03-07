@@ -12,6 +12,7 @@
     <script type="text/javascript" src="resources/js/model.js"></script>
     <script type="text/javascript" src="resources/js/DBLoaded.js"></script>
     <script type="text/javascript" src="resources/js/control.js"></script>
+    <script type="text/javascript" src="resources/js/control_cart.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet"> <!--FONT--->
 </head>
@@ -51,6 +52,46 @@
                 </div>
                 <div class="subTotal" id="total"></div>
             </div>
+            <!-- CONFIRMATION TEST HERE -->
+            <div id="myConfirmation" class="popCartBg">
+                <!-- Cart content -->
+
+                <div class="popCartContent cartAnimation">
+
+                    <!-- Close button (x) -->
+                    <span onclick="document.getElementById('myConfirmation').style.display='none'" class="closeCart" title="Close Cart">&times;</span>
+
+                    <!-- Content here -->
+                    
+                    <div class="cartHeading">Order Confirmed</div>
+                    <div class="cartItemContainer">
+                        <div class="confirmIcon">&#xeed7;</div>
+                        <br>
+                    </div>
+                    <div id="confirmationText" class="itemText">Thanks for your order!</div>
+                    <div id="confirmationText" class="itemText">We will deliver your drinks soon.</div>
+                    <div class="cartTotalContainer">
+                        <div id="orderID" class="cartTotal">Order Number: #0000</div>
+                    </div>
+
+                    <div class="orderBtns">
+                    <button type="button" class="payBtn">New order</button>
+                    <button type="button" class="cancelOrderBtn">Cancel order</button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var cartModal = document.getElementById("myCart");
+                var cartOrder = document.getElementById("myConfirmation");
+                var orderBtn = document.getElementsByClassName("payments")[0];
+
+                // When the user clicks on the button, open the modal
+                orderBtn.onclick = function() {
+                cartModal.style.display = "none";
+                cartOrder.style.display = "block"
+                //Add confirmation here
+                }
+            </script>
             <!-- Login Button -->
             <button onclick="document.getElementById('myLogin').style.display='block'" style="width:auto;" class="loginButton">VIP Login</button>
 
@@ -61,7 +102,7 @@
             <form class="popLoginContent loginAnimation" action="" method="post">
                 <div class="imgcontainer">
                 <div id="vip-login" class="vip-login-heading">Vip Login</div>
-                <span onclick="document.getElementById('myLogin').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <span onclick="document.getElementById('myLogin').style.display='none'" class="closeLogin" title="Close Modal">&times;</span>
                 <img src="resources/img/pirate.png" alt="Avatar" class="avatar">
                 </div>
 

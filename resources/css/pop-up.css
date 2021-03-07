@@ -111,6 +111,27 @@ margin-left: 10px;
 background-color: #f44336;
 }
 
+.itemText {
+  font-family: Basic;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+
+.confirmIcon {
+  display: block;
+  font-family: IcoFont;
+  font-size: 85px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #35cc07;
+}
+
 .cartTotalContainer{
   display: flex;
   justify-content: center;
@@ -147,6 +168,13 @@ input[type=text], input[type=password] {
     width: 100%;
   }
 
+    .orderBtns {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+  }
+
   .payBtn {
     display: block;
     min-width: 20%;
@@ -160,6 +188,22 @@ input[type=text], input[type=password] {
   }
   
   .payBtn:hover {
+    opacity: 0.8;
+  }
+
+  .cancelOrderBtn {
+    display: block;
+    min-width: 20%;
+    width: 25%;
+    height: 65px;
+    padding: 14px 20px;
+    margin: 8px 10px;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    background-color: #f44336;
+  }
+  
+  .cancelOrderBtn:hover {
     opacity: 0.8;
   }
 
