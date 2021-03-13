@@ -205,6 +205,24 @@ input[type=text], input[type=password] {
     opacity: 0.8;
   }
 
+  .editBtn {
+    display: block;
+    min-width: 30%;
+    height: 65px;
+    padding: 14px 20px;
+    margin: 8px 10px;
+    font-size: 24px;
+    color: black;
+    border-color: #FFD130;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #ffffff;
+  }
+  
+  .editBtn:hover {
+    opacity: 0.8;
+  }
+
   /* Set a style for all buttons */
   button {
     font-family: Basic;
