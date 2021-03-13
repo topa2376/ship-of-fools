@@ -17,6 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet"> <!--FONT--->
 </head>
 <body>
+
     <!---------------HEADER---------------->
     <header >
         <div class="mainHeader">
@@ -93,8 +94,9 @@
                 }
             </script>
             <!-- Login Button -->
-            <button onclick="document.getElementById('myLogin').style.display='block'" style="width:auto;" class="loginButton">VIP Login</button>
-
+			<div id="loginContainer">
+           		
+			</div>
             <!-- Login Content Start -->
             <div id="myLogin" class="popLoginBg">
             
@@ -140,10 +142,31 @@
 
             <img id="languageId"  onclick="switchLanguage()" src="resources/img/english.png" > <!-- Switch language--->   
         </div>
-
+		
+		
     </header>
-
+	
     <!---------------MAIN---------------->
+	<div id="userInfo">
+		<div id="userInfoProfile">
+            <button type="button" onclick="window.location.href='vipProfile.html'" class="profile_btn"><p>Profile</p> <img src="resources/img/profile.png"></button>			
+       	</div>
+        <div id="userInfoContent">
+			<div id="userCredit">
+				<p id="userCreditP">
+                Credit: 3560kr
+          		</p>			
+			</div>
+			<div id="userName">
+				<p id="userNameP">
+                Karl Gustaf
+          		</p>			
+			</div>
+            
+       	</div>
+		
+    </div>
+    
     <div class="main">
 
 

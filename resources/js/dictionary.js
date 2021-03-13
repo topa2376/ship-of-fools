@@ -7,7 +7,7 @@ dirDict = {
 
 //dictionary for the text and lanaguges
 lanDict = {
-    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'catgegory', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic'],
+    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'Add to Cart'],
     'en' : {
         'login': 'Login',
         'total': 'Total',
@@ -15,28 +15,30 @@ lanDict = {
         'producer': 'Producer: ',
         'productionyear': 'Production Year :',
         'countryoforiginlandname': 'Country of Origin: ', 
-        'catgegory': 'Catgegory: ', 
+        'category': 'Category: ', 
         'alcoholstrength': 'Alcohol Strength: ', 
         'packaging': 'Packaging: ', 
         'priceinclvat': 'Price (including VAT):', 
         'productionyear': 'Production Year: ',
-        'organic': 'Organic: '
+        'organic': 'Organic: ',
+		'Add to Cart': 'Add to Cart'
     },
 
     //THIS HAS TO BE TRANSLATED!!!!!!
     'se' : {
         'login': 'Logga In',
         'total': 'Totalbelopp',
-        'name': 'Name: ',
-        'producer': 'Producer: ',
-        'productionyear': 'Production Year :',
-        'countryoforiginlandname': 'Country of Origin: ', 
-        'catgegory': 'Catgegory: ', 
-        'alcoholstrength': 'Alcohol Strength: ', 
-        'packaging': 'Packaging: ', 
-        'priceinclvat': 'Price (including VAT):', 
-        'productionyear': 'Production Year: ',
-        'organic': 'Organic: '
+        'name': 'Namn: ',
+        'producer': 'Producent: ',
+        'productionyear': 'Produktionsår:',
+        'countryoforiginlandname': 'Från: ', 
+        'category': 'Kategori: ', 
+        'alcoholstrength': 'Alkoholhalt: ', 
+        'packaging': 'Paketering: ', 
+        'priceinclvat': 'Pris (inklusive moms):', 
+        'productionyear': 'Produktionsår: ',
+        'organic': 'Ekologisk: ',
+		'Add to cart': 'Lägg till'
     }
 }
 

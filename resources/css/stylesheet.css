@@ -2,7 +2,8 @@
 html,body,header{
     max-width: 1195px !important; /* ipad size */
     margin: 0 auto;
-    width: auto;  
+    width: auto; 
+	overflow: hidden;
 }
 h1,h2,h3,h4,p,a,button{
     font-family: Basic;
@@ -22,9 +23,10 @@ header{
     overflow: hidden;
     position: fixed;
     top: 0;
-   width: 100% ; 
-   z-index: 100; 
+  	width: 100% ; 
+ 	z-index: 10; 
 }
+
 .mainHeader{
    padding: 14px 20px 7.2px 24.6px;
 }
@@ -118,11 +120,65 @@ header{
 
 
 /*----------------MAIN CONTENT--------------*/
+
+#userInfo{
+	position: relative;
+	max-width: inherit;
+    top: 120px;
+	z-index: 20; 
+	
+}
+#userInfoProfile{
+	z-index: 20;
+	margin-right: 20px;
+	float: right;	
+}
+
+#userInfoContent{
+	z-index: 20;
+	margin-right: 20px;
+	float: right;
+}
+#userInfoContent p{
+	font-size : 24px;
+}
+#userName{
+	float: right;
+	margin-right: 20px;
+}
+#userCredit{
+	float: right;
+	margin-right: 20px;
+}
+
+.profile_btn{
+	display: inline-flex;
+    justify-content: center; 
+    align-items: center;
+	float: right;
+    width: 217px;
+    height: 57px;
+    border-radius: 23px;
+    border: #ffd130;
+    background-color: #ffd130;	
+}
+.profile_btn p{
+	margin-left: auto;
+	margin-right: auto;
+    font-size : 24px;	
+}
+.profile_btn img{
+	margin-right: 10px;
+	width: 40px;
+	
+}
+
 .main{
    overflow: hidden;
    width: 100%;
    margin-top: 200px !important;
 }
+
 /*----------FILTER-----------*/
 .filterBox{
     float: left;
