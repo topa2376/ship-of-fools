@@ -25,126 +25,13 @@
             <div class="shoppingCartBox">
                 <!-- Cart button -->
                 <button onclick="document.getElementById('myCart').style.display='block'" style="width:auto;" class="shoppingCart">&#xefe7;</button>
-
-                <!-- The Cart -->
-                <div id="myCart" class="popCartBg">
-                <!-- Cart content -->
-
-                <div class="popCartContent cartAnimation">
-
-                    <!-- Close button (x) -->
-                    <span onclick="document.getElementById('myCart').style.display='none'" class="closeCart" title="Close Cart">&times;</span>
-
-                    <!-- Content here -->
-                    
-                    <div class="cartHeading">Current order</div>
-                    <div class="cartItemContainer">
-                        <div id="cartItems" class="basketElement"></div>
-                    </div>
-                    <div class="cartTotalContainer">
-                        <div id="cartSubTotal" class="cartTotal">Total: 123.45kr</div>
-                    </div>
-
-                    <div class="payments">
-                    <button type="button" class="payBtn">Pay with card</button>
-                    <button type="button" class="payBtn">Pay to waiter</button>
-                    </div>
-                </div>
-                </div>
-                <div class="subTotal" id="total"></div>
+				<div class="subTotal" id="total"></div>                
             </div>
-            <!-- CONFIRMATION TEST HERE -->
-            <div id="myConfirmation" class="popCartBg">
-                <!-- Cart content -->
-
-                <div class="popCartContent cartAnimation">
-
-                    <!-- Close button (x) -->
-                    <span onclick="document.getElementById('myConfirmation').style.display='none'" class="closeCart" title="Close Cart">&times;</span>
-
-                    <!-- Content here -->
-                    
-                    <div class="cartHeading">Order Confirmed</div>
-                    <div class="cartItemContainer">
-                        <div class="confirmIcon">&#xeed7;</div>
-                        <br>
-                    </div>
-                    <div id="confirmationText" class="itemText">Thanks for your order!</div>
-                    <div id="confirmationText" class="itemText">We will deliver your drinks soon.</div>
-                    <div class="cartTotalContainer">
-                        <div id="orderID" class="cartTotal">Order Number: #0001</div>
-                    </div>
-
-                    <div class="orderBtns">
-                    <button type="button" class="payBtn">New order</button>
-                    <button type="button" class="editBtn">Edit order</button>
-                    <button type="button" class="cancelOrderBtn">Cancel order</button>
-                    </div>
-                </div>
-            </div>
-            <script>
-                var cartModal = document.getElementById("myCart");
-                var cartOrder = document.getElementById("myConfirmation");
-                var orderBtn = document.getElementsByClassName("payments")[0];
-
-                // When the user clicks on the button, open the modal
-                orderBtn.onclick = function() {
-                cartModal.style.display = "none";
-                cartOrder.style.display = "block"
-                //Add confirmation here
-                }
-            </script>
-            <!-- Login Button -->
+			<!-- Login Button -->
 			<div id="loginContainer">
-           		
 			</div>
-            <!-- Login Content Start -->
-            <div id="myLogin" class="popLoginBg">
-            
-            <!-- Login Form. Please link the 'action' to the control/model -->
-            <form class="popLoginContent loginAnimation" action="" method="post">
-                <div class="imgcontainer">
-                <div id="vip-login" class="vip-login-heading">Vip Login</div>
-                <span onclick="document.getElementById('myLogin').style.display='none'" class="closeLogin" title="Close Modal">&times;</span>
-                <img src="resources/img/pirate.png" alt="Avatar" class="avatar">
-                </div>
-
-                <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" id="uname" required>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" id="psw" required>
-                    
-                <button type="button" onclick="getInfo()"; userDetails(userName) id="loginbutton">Login</button>
-                <label>
-                    <input type="checkbox" checked="checked" id="remember"> Remember me
-                </label>
-                </div>
-                <onclick="validate"()>
-                <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('myLogin').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw"><a href="#">Forgot password?</a></span>
-                </div>
-            </form>
-            <script>
-            // Get the modal
-            var loginModal = document.getElementById('myLogin');
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == loginModal) {
-                    loginModal.style.display = "none";
-                }
-            }
-            </script>
-            </div>
-
-
-            <img id="languageId"  onclick="switchLanguage()" src="resources/img/english.png" > <!-- Switch language--->   
-        </div>
-		
-		
+            <img id="languageId"  onclick="switchLanguage()" src="resources/img/english.png" > <!-- Switch language--->      
+		</div>	
     </header>
 	
     <!---------------MAIN---------------->
@@ -167,6 +54,102 @@
        	</div>
 		
     </div>
+		
+	<!-- The Cart -->
+	<div id="myCart" class="popCartBg">
+	<!-- Cart content -->
+
+		<div class="popCartContent cartAnimation">
+
+			<!-- Close button (x) -->
+			<span onclick="document.getElementById('myCart').style.display='none'" class="closeCart" title="Close Cart">&times;</span>
+			<!-- Content here -->
+			<div class="cartHeading">Current order</div>
+			<div class="cartItemContainer">
+				<div id="cartItems" class="basketElement"></div>
+			</div>
+			<div class="cartTotalContainer">
+				<div id="cartSubTotal" class="cartTotal">Total: 123.45kr</div>
+			</div>
+			<div class="payments">
+				<button type="button" class="payBtn">Pay with card</button>
+				<button type="button" class="payBtn">Pay to waiter</button>
+			</div>
+		</div>
+	</div>
+	<!-- CONFIRMATION TEST HERE -->
+	<div id="myConfirmation" class="popCartBg">
+		<!-- Cart content -->
+		<div class="popCartContent cartAnimation">
+			<!-- Close button (x) -->
+			<span onclick="document.getElementById('myConfirmation').style.display='none'" class="closeCart" title="Close Cart">&times;</span>
+			<!-- Content here -->
+			<div class="cartHeading">Order Confirmed</div>
+			<div class="cartItemContainer">
+				<div class="confirmIcon">&#xeed7;</div>
+				<br>
+			</div>
+			<div id="confirmationText" class="itemText">Thanks for your order!</div>
+			<div id="confirmationText" class="itemText">We will deliver your drinks soon.</div>
+			<div class="cartTotalContainer">
+				<div id="orderID" class="cartTotal">Order Number: #0001</div>
+			</div>
+			<div class="orderBtns">
+				<button type="button" class="payBtn">New order</button>
+				<button type="button" class="editBtn">Edit order</button>
+				<button type="button" class="cancelOrderBtn">Cancel order</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		var cartModal = document.getElementById("myCart");
+		var cartOrder = document.getElementById("myConfirmation");
+		var orderBtn = document.getElementsByClassName("payments")[0];
+		// When the user clicks on the button, open the modal
+		orderBtn.onclick = function() {
+			cartModal.style.display = "none";
+			cartOrder.style.display = "block"
+		}
+	</script>
+	
+	<!-- Login Content Start -->
+	<div id="myLogin" class="popLoginBg">
+		<!-- Login Form. Please link the 'action' to the control/model -->
+		<form class="popLoginContent loginAnimation" action="" method="post">
+			<div class="imgcontainer">
+				<div id="vip-login" class="vip-login-heading">Vip Login</div>
+				<span onclick="document.getElementById('myLogin').style.display='none'" class="closeLogin" title="Close Modal">&times;</span>
+                <img src="resources/img/pirate.png" alt="Avatar" class="avatar">
+			</div>
+			<div class="container">
+				<label for="uname"><b>Username</b></label>
+				<input type="text" placeholder="Enter Username" id="uname" required>
+				<label for="psw"><b>Password</b></label>
+				<input type="password" placeholder="Enter Password" id="psw" required>
+				<button type="button" onclick="getInfo()"; userDetails(userName) id="loginbutton">Login</button>
+				<label>
+					<input type="checkbox" checked="checked" id="remember"> Remember me
+                </label>
+			</div>
+			<onclick="validate"()>
+				<div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('myLogin').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw"><a href="#">Forgot password?</a></span>
+                </div>
+            </form>
+            <script>
+            // Get the modal
+            var loginModal = document.getElementById('myLogin');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == loginModal) {
+                    loginModal.style.display = "none";
+                }
+            }
+            </script>
+	</div>
+                
     
     <div class="main">
 

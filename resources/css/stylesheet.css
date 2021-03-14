@@ -122,20 +122,22 @@ header{
 /*----------------MAIN CONTENT--------------*/
 
 #userInfo{
+	z-index: 11;
 	position: relative;
 	max-width: inherit;
     top: 120px;
-	z-index: 20; 
+	
 	
 }
 #userInfoProfile{
-	z-index: 20;
+	
+	
 	margin-right: 20px;
 	float: right;	
 }
 
 #userInfoContent{
-	z-index: 20;
+	
 	margin-right: 20px;
 	float: right;
 }
