@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+	<link rel="stylesheet" type="text/css" href="resources/css/pop-up.css">
 	<link rel="stylesheet" href="resources/css/bartender_stylesheet.css">
     <title>Bartender</title>
 	<script type="text/javascript" src="resources/js/dictionary.js"></script>
@@ -11,22 +13,82 @@
     <script type="text/javascript" src="resources/js/control.js"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="resources/js/loader.js"></script>
+	<script type="text/javascript" src="resources/js/beverages.js"></script>
+	<script type="text/javascript" src="resources/js/beverages_eng.js"></script>
+	<script type="text/javascript" src="resources/js/DBLoaded.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet"> <!--FONT--->
+
+
+</head>
 </head>
 <body>
-	 
-<div class="wrapper">
+<!---------------HEADER---------------->
+<header >
+	<div class="mainHeader">
+		<div id="header">
 
-    <div id="header">
-		
-			<a href="bartenderMain.html"><img class="logo" src="resources/Images/logo.png"></a>		
+			<a href="bartenderMain.html"><img class="logo" src="resources/images/logo.png"></a>
 			<a href="bartenderMain.html" class="nav_btn">Home</a>
 			<a href="bartenderInventory.html" class="nav_btn">Inventory</a>
 			<a href="bartenderMembers.html" class="nav_btn">Members</a>
-			<img id="languageId"  onclick='switchLanguage()' src="resources/Images/english.png" >
-			<a href class="nav_btn" id="login">Login</a>
-			
-		
-		
+			<img id="languageId"  onclick='switchLanguage()' src="resources/images/english.png" >
+
+
+			<!-- Login Button -->
+		<button onclick="document.getElementById('myLogin').style.display='block'" style="width:auto;" class="loginButton">Login</button>
+
+		<!-- Login Content Start -->
+		<div id="myLogin" class="popLoginBg">
+
+			<!-- Login Form. Please link the 'action' to the control/model -->
+			<form class="popLoginContent loginAnimation" action="" method="post">
+				<div class="imgcontainer">
+					<div id="vip-login" class="vip-login-heading">Login</div>
+					<span onclick="document.getElementById('myLogin').style.display='none'" class="close" title="Close Modal">&times;</span>
+					<img src="resources/img/pirate.png" alt="Avatar" class="avatar">
+				</div>
+
+				<div class="container">
+					<label for="uname"><b>Username</b></label>
+					<input type="text" placeholder="Enter Username" id="uname" required>
+
+					<label for="psw"><b>Password</b></label>
+					<input type="password" placeholder="Enter Password" id="psw" required>
+
+					<button type="button" onclick="getInfo(); userDetails(userName)" id="loginbutton">Login</button>
+					<label>
+						<input type="checkbox" checked="checked" id="remember"> Remember me
+					</label>
+				</div>
+				<onclick="validate"()>
+				<div class="container" style="background-color:#f1f1f1">
+					<button type="button" onclick="document.getElementById('myLogin').style.display='none'" class="cancelbtn">Cancel</button>
+					<span class="psw"><a href="#">Forgot password?</a></span>
+				</div>
+			</form>
+			<script>
+            // Get the modal
+            var loginModal = document.getElementById('myLogin');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == loginModal) {
+                    loginModal.style.display = "none";
+                }
+            }
+            </script>
+		</div>
+
+		<!-------------NOT IMPLEMENTED YET-------->
+		<div class="loginButtonVIP"><a href="#" onclick="">Hello, Bob &nbsp  300 credits &nbsp </a>  <a href="#" onclick="">LOGOUT</a> </div>
+		<!-------------NOT IMPLEMENTED YET-------->
+
+
+	</div></div>
+
+
     </div>
 	<div class="main">
 		<div id="orders">
@@ -37,10 +99,29 @@
 				</div>
 				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
 				<div class="list_item">
-					<div class="itemNumber"><p>#001</p></div>
-					<div class="itemName"><p>FirstName LastName</p></div>
+					<div class="itemQuantity"><p>2</p></div>
+					<div class="itemName"><p>Braastad XO</p></div>
+					<div class="userOrder"><p>25</p></div>
+					<div class="purchaseTime"><p>16:07:26</p></div>					
 				</div>
-				<!----End of print------>
+				<div class="list_item">
+					<div class="itemQuantity"><p>2</p></div>
+					<div class="itemName"><p>Braastad XO</p></div>
+					<div class="userOrder"><p>25</p></div>
+					<div class="purchaseTime"><p>16:07:26</p></div>					
+				</div>
+				<div class="list_item">
+					<div class="itemQuantity"><p>2</p></div>
+					<div class="itemName"><p>Braastad XO</p></div>
+					<div class="userOrder"><p>25</p></div>
+					<div class="purchaseTime"><p>16:07:26</p></div>					
+				</div>
+				<div class="list_item">
+					<div class="itemQuantity"><p>2</p></div>
+					<div class="itemName"><p>Braastad XO</p></div>
+					<div class="userOrder"><p>25</p></div>
+					<div class="purchaseTime"><p>16:07:26</p></div>					
+				</div>
 			</div>
 		
 			<div class="list" id="acceptedOrders">
@@ -48,11 +129,6 @@
 					<h1>Accepted Orders</h1>
 				</div>
 				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
-				<div class="list_item">
-					<div class="itemNumber"><p>#001</p></div>
-					<div class="itemName"><p>FirstName LastName</p></div>
-				</div>
-				<!----End of print------>
 			</div>
 		</div>
 		
