@@ -84,10 +84,23 @@ h1,h2,h3,h4,p,a,button{
 	text-align: center;
 	margin: auto;
 }
+
+.list_item{
+	padding-right: 5px;
+	padding-left: 5px;
+	height: 80px;
+	margin-bottom: 3px;
+
+	display: flex;
+  	align-items: center;
+	border: #ffd130;
+	background-color: #ffd130;
+}
+
 .list_item p {
     height: 25px;
     font-family: Basic;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -98,18 +111,22 @@ h1,h2,h3,h4,p,a,button{
 }
 .itemNumber{
 	width:100px;
-	margin-left: 40px;
-}
-.itemName{
-	width:800px;
-	margin-left: 40px;
-	margin-right: auto;
+	margin-left: 20px;
 }
 .itemQuantity{
+	width:40px;
+	margin-left: 20px;
+	margin-right: auto;
+}
+.itemName{
 	width:140px;
 	margin-right: 40px;
 }
-.itemPrice{
+.userOrder{
+	width:90px;
+	margin-right: 40px;
+}
+.purchaseTime{
 	width:90px;
 	margin-right: 40px;
 }
@@ -136,13 +153,7 @@ h1,h2,h3,h4,p,a,button{
 	background-color: #eeeeee;
 	overflow: auto;
 }
-.list_item{
-	height: 80px;
-	margin-bottom: 3px;
-	background-color: #fff; 
-	display: flex;
-  	align-items: center;
-}
+
 
 
 /*----------ADDING/DELETING ORDERS-----------*/
@@ -191,3 +202,36 @@ h1,h2,h3,h4,p,a,button{
   and (max-device-width: 1600px) 
   and (min-resolution: 192dpi) { 
 }
+
+
+.loginButton{
+    float: right;
+    width: 217px;
+    height: 57px;
+    margin: 25px 0px 29.8px 51px;
+    border-radius: 23px;
+    border: #ffd130;
+    background-color: #ffd130;
+    font-size : 24px;
+}
+.loginButtonVIP{
+    float: right;
+    width: 450px;
+    height: 57px;
+    margin: 25px 0px 29.8px 51px;
+    border-radius: 23px;
+    border: #ffd130;
+    background-color: #ffd130;
+    overflow: hidden;
+    display: none;
+}/*-----VIPSWITCH----*/
+
+.loginButtonVIP a{
+    display: block;
+    margin: 10px 20px;
+    font-size : 24px;
+    text-decoration: none;
+    color: #000000;
+    float: left;
+}
+
