@@ -1,3 +1,19 @@
+//============================= Drag and Drop ================================
+
+function allowDrop(ev) {
+	ev.preventDefault();
+}
+
+function drag(ev) {
+	ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev, el) {
+	ev.preventDefault();
+	var data = ev.dataTransfer.getData("text");
+	ev.target.appendChild(document.getElementById(data));
+}
+
 //============================== Switch language ===============================
 function switchLanguage () {
   if (language=='en'){// English
@@ -23,7 +39,7 @@ function update_language(){
 }
 //==============================
 
-var userID = null;
+
 function getInfo() {
     var username = document.getElementById("uname").value
     var password = document.getElementById("psw").value
@@ -35,7 +51,8 @@ function getInfo() {
 		
         if(username == DB.users[i].username && password == DB.users[i].password) { 
 			typeofuser = DB.users[i].credentials;
-			userID = DB.users[i].user_id;
+			localStorage.setItem("userID", DB.users[i].user_id);
+			localStorage.setItem("LoggedIn", true);
 		}
         
     }
@@ -43,32 +60,35 @@ function getInfo() {
 	switch (typeofuser) {
   		case "0":
 			window.location.href = "bartenderMain.html";
-			console.log(userID);
 			break;
   		case "3":
-			window.location.href = "vipProfile.html";
-			console.log(userID);
+			update_userInfo();
+			document.getElementById('myLogin').style.display = "none";
+			//window.location.href = "vipProfile.html";
 			break;
   		default:
 			window.location.href = "https://datahahah.ytmnd.com";
-			console.log(userID);
 	}
 }
 
 
-function userDetails(userName) {
-    var userCollect = [];
-    var userID;
-    var userIndex;
-    var account;
+function update_userInfo() {
+    
+	var userID;
+    var userName;
+	var account;
+	var loggedIn;
+	
+	loggedIn = localStorage.getItem("LoggedIn");
+	
+	userID = localStorage.getItem("userID");
 
     // First we find the user ID of the selected user. We also save the index number for the record in the JSON
     // structure.
     //
     for (i = 0; i < DB.users.length; i++) {
-        if (DB.users[i].username == userName) {
-            userID = DB.users[i].user_id;
-            userIndex = i;
+        if (DB.users[i].user_id == userID) {   
+            userName = DB.users[i].first_name  + " " + DB.users[i].last_name;
         };
     };
 
@@ -81,18 +101,36 @@ function userDetails(userName) {
         }
     };
 
-    // This is the way to add the details you want from the db into your own data structure.
-    // If you want to change the details, then just add or remove items accordingly below.
-    userCollect.push(
-        DB.users[userIndex].user_id,
-        DB.users[userIndex].username,
-        DB.users[userIndex].first_name,
-        DB.users[userIndex].last_name,
-        DB.users[userIndex].email,
-        account
-    );
+    loginContainer = document.getElementById('loginContainer')
+	
+	var button = document.createElement('button');
+	
+	if (loggedIn == "true"){
+		
+		loginContainer.removeChild(loginContainer.firstChild);
+		
+		button.innerHTML = 'Logout';
+		button.onclick = function() {localStorage.setItem("LoggedIn", false); localStorage.setItem("userID", null); update_userInfo()};
+		button.className="loginButton";
+		loginContainer.appendChild(button);	
+		
+		document.getElementById('userInfo').style.display = "initial";
+		document.getElementById('userNameP').textContent = userName;
+		document.getElementById('userCreditP').textContent = "Credits: " + account + " kr";
+		
+		
+	} 
+	else {	
+		
+		loginContainer.removeChild(loginContainer.firstChild);
 
-    return userCollect;
+		button.innerHTML = 'Login';
+		button.onclick = function() {document.getElementById('myLogin').style.display='block'};
+		button.className="loginButton";
+		loginContainer.appendChild(button);
+		document.getElementById('userInfo').style.display = "none";
+				
+	}
 }
 
 //============================== Purchase Items ===============================
@@ -256,6 +294,7 @@ function update_view() {
   set_categories ();
   update_language();
   update_total();
+  update_userInfo();
 }
 
 // We don't update the view the first time until the document is ready
