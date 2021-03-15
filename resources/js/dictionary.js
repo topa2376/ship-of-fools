@@ -7,21 +7,21 @@ dirDict = {
 
 //dictionary for the text and lanaguges
 lanDict = {
-    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'Add to Cart'],
-    'en' : {
+    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'addToCartButton'],
+        'en' : {
         'login': 'Login',
         'total': 'Total',
         'name': 'Name: ',
         'producer': 'Producer: ',
         'productionyear': 'Production Year :',
         'countryoforiginlandname': 'Country of Origin: ', 
-        'category': 'Category: ', 
+        'catgegory': 'Catgegory: ', 
         'alcoholstrength': 'Alcohol Strength: ', 
         'packaging': 'Packaging: ', 
         'priceinclvat': 'Price (including VAT):', 
         'productionyear': 'Production Year: ',
         'organic': 'Organic: ',
-		'Add to Cart': 'Add to Cart'
+        'addToCartButton': 'Add to cart'
     },
 
     //THIS HAS TO BE TRANSLATED!!!!!!
@@ -31,14 +31,14 @@ lanDict = {
         'name': 'Namn: ',
         'producer': 'Producent: ',
         'productionyear': 'Produktionsår:',
-        'countryoforiginlandname': 'Från: ', 
-        'category': 'Kategori: ', 
-        'alcoholstrength': 'Alkoholhalt: ', 
-        'packaging': 'Paketering: ', 
-        'priceinclvat': 'Pris (inklusive moms):', 
+        'countryoforiginlandname': 'Från: ',
+        'category': 'Kategori: ',
+        'alcoholstrength': 'Alkoholhalt: ',
+        'packaging': 'Paketering: ',
+        'priceinclvat': 'Pris (inklusive moms):',
         'productionyear': 'Produktionsår: ',
         'organic': 'Ekologisk: ',
-		'Add to cart': 'Lägg till'
+		'addToCartButton': 'Lägg till'
     }
 }
 
