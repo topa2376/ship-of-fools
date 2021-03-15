@@ -185,85 +185,140 @@ function percentToNumber(percentStr) {
 
 // =====================================================================================================
 
-//========================BARTENDER MENU PAGE WITH 4 FOUNCTION BELOW========================================================================
+//=============BartenderMenu PAGE START FROM HERE=========================
+var localdata = localStorage.getItem('drinks');//localStored-string-version all drinks
+// var localdataIndex=[1,2,3];
+// localStorage.setItem('index',localdataIndex);
 
+// console.log(localStorage.getItem('index'));
+var datalist = [];// the array to contain all drinks
+var menulist=[];//the drinks at the menu box,  handover to Erik home page
 
+//=============1.Print the page (both boxes) ==========================
+if (localdata == null) {//if localStorage don't have data
+    engBev.forEach((ele) => {
+        datalist.push({ ...ele, 'state': false })//set all drinks currently in the list as false
+    }) //push all drinks from beverages_eng.js to datalist Array
+    printBottomList(datalist);
+    printMenu(datalist);
+} else {
+    datalist = JSON.parse(localdata);// translate localStored all drinks to json array
+    printBottomList(datalist);
+    printMenu(datalist);
+   
+}
 
-//=============Show all drinks in Available options box ==========================
-
-list()
-function list() {
+//=============print all the drinks at the bottom list box  ==========================
+function printBottomList(engBev) {
     var html = '';
     engBev.forEach((ele, i) => {
-        html += `
-        <div class="list_item">
-            <!----articleid--->
-            <p class='drinkID'>${ele.articleid}</p>
-            <!----articleid--->
-            <p class='drinkName'>${ele.name}-${ele.alcoholstrength}</p>
-            <!----name+(alcoholstrength)--->
-            <p class="drinkPrice">${ele.priceinclvat}</p>
-            <!----priceinclvat--->
-            <a href='javascript:;' class="nav_btn" class="addToMenu" onClick='addlist(${i},this)'>Add to Menu</a>
-        </div>
-        `
+        if (ele.state == false) {// if nothing have been stored in localStorage
+            html += `
+            <div class="list_item" uid='${ele.articleid}' >
+                <!----articleid--->
+                <p class='drinkID'>${ele.articleid}</p>
+                <!----articleid--->
+                <p class='drinkName'>${ele.name}-${ele.alcoholstrength}</p>
+                <!----name+(alcoholstrength)--->
+                <p class="drinkPrice">${ele.priceinclvat}</p>
+                <!----priceinclvat--->
+                <a href='javascript:;' class="nav_btn" class="addToMenu" onClick='addlist(${ele.articleid})'>Add to Menu</a>
+            </div>
+            `
+        }
+
     });
-    document.querySelector('.listbox').innerHTML = html;
+    document.querySelector('.listBoxBartender').innerHTML = html;
+}
+
+//=============print all the drinks at the top menu box ==========================
+function printMenu(engBev) {
+    var html = '';
+    engBev.forEach((ele, i) => {
+
+        if (ele.state == true) {//drinks currently at the menu box
+            html += `
+                <div class="list_item" uid='${ele.articleid}'>
+                    <!----articleid--->
+                    <p class='drinkID'>${ele.articleid}</p>
+                    <!----articleid--->
+                    <p class='drinkName'>${ele.name}-${ele.alcoholstrength}</p>
+                    <!----name+(alcoholstrength)--->
+                    <p class="drinkPrice">${ele.priceinclvat}</p>
+                    <!---priceinclvat--->
+                    <a onClick="deleted(${ele.articleid})" class="deleteFromMenu"><img class="delete" src="resources/Images/delete.png"></a>
+                    <form class='changePriceBox'>
+                        <label>SEK</label>
+                        <input type="text" value='${ele.priceinclvat}'>
+                        <a href='javascript:;' class="nav_btn" class="changePrice" onClick="changeprice(${ele.articleid},this)">Change price</a>
+                    </form>
+                </div>
+            `;
+        }
+
+    });
+    document.querySelector('.menuBoxBartender').innerHTML = html;
+    
+    //====handover menu list array to Erik home page
+    menulist=[];
+    engBev.forEach((ele) => {
+        if (ele.state == true) {
+             menulist.push({ ...ele })
+        }
+    })
+    // console.log(menulist+'22');
+    
+}
+
+//============ update=re-write localStorage+ re-print two boxes
+function updateData(data) {//data =whole list
+    localStorage.setItem('drinks', JSON.stringify(data));//data=datalist, change json code to string + store all drinks in Local (update)
+    printBottomList(datalist);//update available list
+    printMenu(datalist);// update menu list
+}
+
+//============2.click 'add to menu', the drink will be add to the menu，and it will be removed from available options==========================
+
+function addlist(uid) {//uid=${ele.articleid}
+    datalist.map((ele) => {
+        if (ele.articleid == uid) {// loop all drinks until uid match
+            ele.state = true; //in the menu
+        }
+    })
+    updateData(datalist);//re-print page
 }
 
 
-//============click 'add to menu', the drink will be add to the menu，and it will be removed from available options==========================
 
-function addlist(index, e) {
-    console.log(e.parentNode.childNodes)
-    var articleid = e.parentNode.childNodes[3].innerHTML;
-    var drinkName = e.parentNode.childNodes[7].innerHTML;
-    var drinkPrice = e.parentNode.childNodes[11].innerHTML;
-    var html = `
-        <div class="list_item" id=''>
-            <!----articleid--->
-            <p class='drinkID'>${articleid}</p>
-            <!----articleid--->
-            <p class='drinkName'>${drinkName}</p>
-            <!----name+(alcoholstrength)--->
-            <p class="drinkPrice">${drinkPrice}</p>
-            <!---priceinclvat--->
-            <a onClick="deleted(${index},this)" class="deleteFromMenu"><img class="delete" src="resources/Images/delete.png"></a>
-            <form class='changePriceBox'>
-                <label>SEK</label>
-                <input type="text" value='${drinkPrice}'>
-                <a href='javascript:;' class="nav_btn" class="changePrice" onClick="changeprice(${index},this)">Change price</a>
-            </form>
-        </div>
-    `;
-    var length = document.querySelectorAll('.addlist .list_item').length;
-    console.log(length);
-    document.querySelector('.addlist').insertAdjacentHTML("beforeEnd", html);
-    document.querySelector(`.listbox .list_item:nth-child(${index + 1})`).style.display = 'none'
+//============3.click"x",the drink will be removed from Menu，and show in available options==========================
+
+function deleted(uid) {//uid=${ele.articleid}
+    datalist.map((ele) => {
+        console.log(ele.articleid == uid)
+        if (ele.articleid == uid) {
+            ele.state = false;// in the available list
+        }
+    })
+    updateData(datalist);
 }
 
 
+//============4.In the Menu,write price+click "change price",the price will be changed.==========================
 
-//============click"x",the drink will be removed from Menu，and show in available options==========================
 
-function deleted(index, e) {
-    e.parentNode.remove();
-    document.querySelector(`.listbox .list_item:nth-child(${index + 1})`).style.display = 'block'
+function changeprice(uid, e) {
+
+    var price = e.parentNode.childNodes[3].value;//get form <input> value-new price
+    
+
+    datalist.map((ele) => {               
+        console.log(ele.articleid == uid)
+        if (ele.articleid == uid) { 
+            ele.priceinclvat = price;
+        }
+    })
+    printMenu(datalist); //update menu list
+    localStorage.setItem('drinks', JSON.stringify(datalist));//update local storage
 }
 
-
-//============In the Menu,write price+click "change price",the price will be changed.==========================
-
-
-function changeprice(index, e) {
-    var price = e.parentNode.childNodes[3].value;
-    console.log(price)
-    e.parentNode.parentNode.childNodes[11].innerHTML = price;
-    document.querySelector(`.listbox .list_item:nth-child(${index + 1}) .drinkPrice`).innerHTML = price;
-}
-// =====================================================================================================
-// END OF FILE
-// =====================================================================================================
-// =====================================================================================================
-
-
+//=============BartenderMenu PAGE END HERE==========================
