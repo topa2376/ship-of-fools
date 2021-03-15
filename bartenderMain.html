@@ -27,36 +27,42 @@
 			
 		
 		
+		
     </div>
 	<div class="main">
 		<div id="orders">
 		
-			<div class="list" id="ordersRequested">
-				<div class="heading">
+			<div class="list" id="ordersRequested" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<div class="heading" ondrop="drop(event)" ondragover="allowDrop(event)">
 					<h1>Order Requests</h1>
 				</div>
 				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
-				<div class="list_item">
+				<div draggable="true"ondragstart="drag(event)" class="list_item" id="held1">
 					<div class="itemNumber"><p>#001</p></div>
-					<div class="itemName"><p>FirstName LastName</p></div>
+					<div class="itemName"><p>Jari Iktidricka</p></div>
 				</div>
 				<!----End of print------>
 			</div>
 		
 			<div class="list" id="acceptedOrders">
-				<div class="heading">
+				<div class="heading" >
 					<h1>Accepted Orders</h1>
+
 				</div>
+				<div ondrop="drop(event, this)" ondragover="allowDrop(event)" id="holder" >
+
 				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
-				<div class="list_item">
-					<div class="itemNumber"><p>#001</p></div>
-					<div class="itemName"><p>FirstName LastName</p></div>
+					<div draggable="true"ondragstart="drag(event)" class="list_item" id="held2" ondragover="disallowDrop(event)">
+						<div class="itemNumber"><p>#002</p></div>
+						<div class="itemName"><p>Jari Iktidricka</p></div>
+					</div>
+
 				</div>
 				<!----End of print------>
 			</div>
 		</div>
 		
-		<div id="bin_addOrder">
+		<div id="bin_addOrder"  ondrop="drop(event, this)" ondragover="allowDrop(event)">
 			<img id="bin" src="resources/Images/Bartender/bin.png">
 			<a href class="nav_btn">Add an order</a>
 		</div>
