@@ -1,22 +1,3 @@
-
-//============================= Drag and Drop ================================
-
-      function allowDrop(ev) {
-            ev.preventDefault();
-        }
-
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-
-        function drop(ev, el) {
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-        }
-
-
-
 //============================== Switch language ===============================
 function switchLanguage () {
   if (language=='en'){// English
@@ -36,12 +17,13 @@ function update_language(){
   keys = lanDict['keys'];
   for (idx in keys) {
       key = keys[idx];
+      $("." + key).text(get_string(key));
       $("#" + key).text(get_string(key));
   };
 }
 //==============================
 
-
+var userID = null;
 function getInfo() {
     var username = document.getElementById("uname").value
     var password = document.getElementById("psw").value
@@ -53,8 +35,7 @@ function getInfo() {
 		
         if(username == DB.users[i].username && password == DB.users[i].password) { 
 			typeofuser = DB.users[i].credentials;
-			localStorage.setItem("userID", DB.users[i].user_id);
-			localStorage.setItem("LoggedIn", true);
+			userID = DB.users[i].user_id;
 		}
         
     }
@@ -62,36 +43,32 @@ function getInfo() {
 	switch (typeofuser) {
   		case "0":
 			window.location.href = "bartenderMain.html";
+			console.log(userID);
 			break;
   		case "3":
-			update_userInfo();
-			document.getElementById('myLogin').style.display = "none";
-			//window.location.href = "vipProfile.html";
+			window.location.href = "vipProfile.html";
+			console.log(userID);
 			break;
   		default:
 			window.location.href = "https://datahahah.ytmnd.com";
+			console.log(userID);
 	}
 }
 
 
-
-function update_userInfo() {
-    
-	var userID;
-    var userName;
+function userDetails(userName) {
+    var userCollect = [];
+    var userID;
+    var userIndex;
     var account;
-	var loggedIn;
-	
-	loggedIn = localStorage.getItem("LoggedIn");
-	
-	userID = localStorage.getItem("userID");
 
     // First we find the user ID of the selected user. We also save the index number for the record in the JSON
     // structure.
     //
     for (i = 0; i < DB.users.length; i++) {
-        if (DB.users[i].user_id == userID) {   
-            userName = DB.users[i].first_name  + " " + DB.users[i].last_name;		
+        if (DB.users[i].username == userName) {
+            userID = DB.users[i].user_id;
+            userIndex = i;
         };
     };
 
@@ -100,48 +77,23 @@ function update_userInfo() {
     //
     for (i = 0; i < DB.account.length; i++) {
         if (DB.account[i].user_id == userID) {
-           account = DB.account[i].creditSEK;
+            account = DB.account[i].creditSEK;
         }
     };
+
     // This is the way to add the details you want from the db into your own data structure.
     // If you want to change the details, then just add or remove items accordingly below.
-	
-	loginContainer = document.getElementById('loginContainer')
-	
-	var button = document.createElement('button');
-	
-	if (loggedIn == "true"){
-		
-		loginContainer.removeChild(loginContainer.firstChild);
-		
-		button.innerHTML = 'Logout';
-		button.onclick = function() {localStorage.setItem("LoggedIn", false); localStorage.setItem("userID", null); update_userInfo()};
-		button.className="loginButton";
-		loginContainer.appendChild(button);	
-		
-		document.getElementById('userInfo').style.display = "initial";
-		document.getElementById('userNameP').textContent = userName;
-		document.getElementById('userCreditP').textContent = "Credits: " + account + " kr";
-		
-		
-	} 
-	else {	
-		
-		loginContainer.removeChild(loginContainer.firstChild);
+    userCollect.push(
+        DB.users[userIndex].user_id,
+        DB.users[userIndex].username,
+        DB.users[userIndex].first_name,
+        DB.users[userIndex].last_name,
+        DB.users[userIndex].email,
+        account
+    );
 
-		button.innerHTML = 'Login';
-		button.onclick = function() {document.getElementById('myLogin').style.display='block'};
-		button.className="loginButton";
-		loginContainer.appendChild(button);
-		document.getElementById('userInfo').style.display = "none";
-				
-	}	
-				
-
-	
+    return userCollect;
 }
-
-
 
 //============================== Purchase Items ===============================
 
@@ -239,13 +191,11 @@ function drink_box(prod) {
   name.textContent = prod.name + " (" + prod.alcoholstrength + ")"; 
   price.textContent = "SEK " + prod.priceinclvat;
   document.getElementById(dst).appendChild(div);
-  addToCartButton.textContent = 'Add to Cart';
+  addToCartButton.textContent = 'Add to cart';
   addToCartButton.className = 'addToCartButton';
 
   //functionalities
   img.onclick = function() {show_drink_dets(prod)}; // for showing drinks details 
-  addToCartButton.onclick = function() {add_to_cart(prod)}; //add to cart function
-
   //add all elements to the div 
   div.onclick = function() {
   add_to_cart(prod)
@@ -292,6 +242,9 @@ function add_element_to_cart(prod){
   return div;
 }
 
+//============================== Create order requests ========================
+
+
 //============================== Update and set View ========================
 
 function update_view() {
@@ -303,7 +256,6 @@ function update_view() {
   set_categories ();
   update_language();
   update_total();
-  update_userInfo();
 }
 
 // We don't update the view the first time until the document is ready
