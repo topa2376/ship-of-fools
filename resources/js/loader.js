@@ -187,17 +187,18 @@ function percentToNumber(percentStr) {
 
 //=============BartenderMenu PAGE START FROM HERE=========================
 var localdata = localStorage.getItem('drinks');//localStored-string-version all drinks
-// var localdataIndex=[1,2,3];
-// localStorage.setItem('index',localdataIndex);
-
-// console.log(localStorage.getItem('index'));
 var datalist = [];// the array to contain all drinks
-var menulist=[];//the drinks at the menu box,  handover to Erik home page
 
 //=============1.Print the page (both boxes) ==========================
 if (localdata == null) {//if localStorage don't have data
     engBev.forEach((ele) => {
-        datalist.push({ ...ele, 'state': false })//set all drinks currently in the list as false
+        datalist.push({ 
+            articleid: ele.articleid,
+            priceinclvat: ele.priceinclvat,
+            name: ele.name,
+            alcoholstrength: ele.alcoholstrength,
+            'state': false 
+        })//set all drinks currently in the list as false
     }) //push all drinks from beverages_eng.js to datalist Array
     printBottomList(datalist);
     printMenu(datalist);
@@ -258,16 +259,6 @@ function printMenu(engBev) {
 
     });
     document.querySelector('.menuBoxBartender').innerHTML = html;
-    
-    //====handover menu list array to Erik home page
-    menulist=[];
-    engBev.forEach((ele) => {
-        if (ele.state == true) {
-             menulist.push({ ...ele })
-        }
-    })
-    // console.log(menulist+'22');
-    
 }
 
 //============ update=re-write localStorage+ re-print two boxes
