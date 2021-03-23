@@ -17,7 +17,74 @@ function drop(ev, el) {
 	ev.target.appendChild(document.getElementById(data));
 }
 
+//=== Psudocode for Undo/redo and getting required data for that from "drop" function ===
 
+/* For some reason the method I wanted to use for checking the "targets class" didnt work
+//so I have down here discribed part of how it kind of would work for drag and drop and
+//undo/redo for down here...
+
+function drop(ev, el) {
+	ev.preventDefault();
+	var data = ev.dataTransfer.getData("text");
+	var parent = data.parentElement;
+	var target = ev.target;
+	
+	var classCheck = ev.target.matches("holder"); 
+	//this should check if the element we want to move the item into is one that allows for for it by 
+	//seeing if the ev.target.matches("holder") returns true or false. 
+	
+	//we then use classCheck as a way to see if the target is class "holder" or not, and if it is holder,
+	//we call our doit()
+	if (classCheck == "true"){
+		doit(moveObj(data, target, parent)); //we send the data(the object we want to move), target (the place we want to move it to) 
+		//and parent (the place that object originated from) as arguments to be stored and used. 
+	} else {return;}
+	
+}
+
+//============================= Undo/Redo ================================
+
+function moveObj(obj, destin, origin) {
+    
+	var obj = obj; // same as data above
+	var destin = destin; // same as target above
+	var origin = origin; // same as parent above
+
+	execute: function () {      // The original action
+		destin.appendChild(document.getElementById(obj));
+	},
+	unexecute: function () {    // Undoing the action
+		origin.appendChild(document.getElementById(obj));
+	},
+	reexecute: function () {    // Redoing the action is the same as doing it
+                                // the first time.
+		destin.appendChild(document.getElementById(obj));
+		update_view();
+	}
+      
+}
+
+// ===========================================================================
+
+function deleteObj(obj, origin) {
+   
+   	var obj = obj;
+	var origin = origin;
+
+	execute: function () {      // The original action
+		document.getElementById(obj) = this.delete; //remove the item
+	},
+	unexecute: function () {    // Undoing the action
+		origin.appendChild(document.getElementById(obj));
+	},
+	reexecute: function () {    // Redoing the action is the same as doing it
+                                // the first time.
+		document.getElementById(obj) = this.delete; //remove the item
+	}
+      
+}
+*/
+// ==============================End of psudo=================================
 
 //============================== Switch language ===============================
 function switchLanguage () {
@@ -84,7 +151,7 @@ function update_userInfo() {
 	var account;
 	var loggedIn;
 	
-	// sets our stored varibles (stored in localStorage in case it )
+	// sets our stored varibles (stored in localStorage in case so if it is set in an earlier session user is still logged in)
 	loggedIn = localStorage.getItem("LoggedIn");
 	
 	userID = localStorage.getItem("userID");
@@ -104,7 +171,8 @@ function update_userInfo() {
             account = DB.account[i].creditSEK;
         }
     };
-
+	
+	//Here we add/remove the login/logout button depending on which should be active, as well as hide user info tab if no-one is logged in
     loginContainer = document.getElementById('loginContainer')
 	
 	var button = document.createElement('button');

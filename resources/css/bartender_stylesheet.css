@@ -85,7 +85,7 @@ h1,h2,h3,h4,p,a,button{
 .holder{
     height: 100%;
     width: 100%;
-	overflow: auto;
+	color: #0f0;
 }
 .list h1{
 	color: 0;
