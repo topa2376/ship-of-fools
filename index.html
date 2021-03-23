@@ -116,7 +116,7 @@
 	
 	<!-- Login Content Start -->
 	<div id="myLogin" class="popLoginBg">
-		<!-- Login Form. Please link the 'action' to the control/model -->
+		<!-- Login Form. -->
 		<form class="popLoginContent loginAnimation" action="" method="post">
 			<div class="imgcontainer">
 				<div id="vip-login" class="vip-login-heading">Vip Login</div>
@@ -125,10 +125,10 @@
 			</div>
 			<div class="container">
 				<label for="uname"><b>Username</b></label>
-				<input type="text" placeholder="Enter Username" id="uname" required>
+				<input type="text" placeholder="Enter Username" id="uname" required> <!-- Corresponding to getInfo in control.js --> 
 				<label for="psw"><b>Password</b></label>
-				<input type="password" placeholder="Enter Password" id="psw" required>
-				<button type="button" onclick="getInfo()"; userDetails(userName) id="loginbutton">Login</button>
+				<input type="password" placeholder="Enter Password" id="psw" required> <!-- Corresponding to getInfo in control.js --> 
+				<button type="button" onclick="getInfo()"; userDetails(userName) id="loginbutton">Login</button> <!-- Corresponding to getInfo in control.js --> 
 				<label>
 					<input type="checkbox" checked="checked" id="remember"> Remember me
                 </label>
@@ -136,7 +136,7 @@
 			<onclick="validate"()>
 				<div class="container" style="background-color:#f1f1f1">
                 <button type="button" onclick="document.getElementById('myLogin').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw"><a href="#">Forgot password?</a></span>
+                <span class="psw"><a href="#">Forgot password?</a></span> <!-- placeholder not currently working-->
                 </div>
             </form>
             <script>
