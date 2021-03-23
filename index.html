@@ -130,16 +130,21 @@
 		<!-- Login Form. Code inspired from W3schools: https://www.w3schools.com/howto/howto_css_login_form.asp -->
 		<form class="popLoginContent loginAnimation" action="" method="post">
 			<div class="imgcontainer">
+				<!-- Login heading -->
 				<div id="vip-login" class="vip-login-heading"></div>
+				<!-- Close button -->
 				<span onclick="document.getElementById('myLogin').style.display='none'" class="closeLogin" title="Close Login">&times;</span>
-                <img src="resources/img/pirate.png" alt="Avatar" class="avatar">
+                <!-- Login avatar -->
+				<img src="resources/img/pirate.png" alt="Avatar" class="avatar">
 			</div>
+			<!-- Login content -->
 			<div class="container">
+				<!-- Form input -->
 				<label for="uname" id="loginUserName"><b></b></label>
 				<input type="text" placeholder="Enter Username" id="uname" required> <!-- Corresponding to getInfo in control.js --> 
 				<label for="psw" id="loginPassword"><b></b></label>
 				<input type="password" placeholder="Enter Password" id="psw" required> <!-- Corresponding to getInfo in control.js --> 
-				<button type="button" onclick="getInfo()"; userDetails(userName) id="loginbutton">Login</button> <!-- Corresponding to getInfo in control.js --> 
+				<button type="button" onclick="getInfo()"; userDetails(userName) id="loginbutton"></button> <!-- Corresponding to getInfo in control.js --> 
 				<label>
 					<input type="checkbox" checked="checked" id="LoginRemember"> 
                 </label>
@@ -150,6 +155,7 @@
                 <span class="psw" id="loginForgotPwd"><a href="#"></a></span> <!-- placeholder not currently working-->
                 </div>
             </form>
+			<!-- Additional JS to open the login -->
             <script>
             // Get the modal
             var loginModal = document.getElementById('myLogin');
@@ -162,14 +168,11 @@
             }
             </script>
 	</div>
-                
-    
     <div class="main">
-
-
-        <!------LEFT FILTER----------->
+        <!-- Filter set on left-side -->
         <div class="filterBox">
             <div class="filterWrapper" id="filterBox">
+				<!-- Each button is a HTML Entity from IcoFont -->
                 <button class="filter1" onclick="list_selected(this)">&#xf000;</button>
                 <button class="filter1" onclick="list_selected(this)">&#xeb90;</button>
                 <button class="filter1" onclick="list_selected(this)">&#xef3d;</button>
@@ -178,17 +181,17 @@
                 <button class="filter1" onclick="list_selected(this)">&#xeb56;</button>
             </div>
         </div>
-        <!------RIGHT CONTAINER BOX---------->
+        <!-- Right container, not used right now -->
         <div class="rightContainer">
-            <!-------------BANNER-------->
+            <!-- Banner for VIPs -->
             <img class="vipBanner" src="resources/images/VIP/banner.png">
             <!----DRINK PRODUCT BOX------>
             <div class="productBox">
-               <!----VIP DRINK--? currently hardcode-->
+               <!----VIP DRINKS-- currently hardcoded-->
                 <div class="groupDrinkBox vipFavourite" id="vipSelected">
                 </div>
 
-                 <!----DRINKS, THIS SHOULD BE SEARCHABLE----->
+                 <!---- Drinks, searchable funciton not implemented ----->
                  <div class="groupDrinkBox " id="groupDrinkBox">
                 </div>
             </div>
