@@ -18,12 +18,12 @@
 
     <div id="header">
 		
-			<a href="bartenderMain.html"><img class="logo" src="resources/images/logo.png"></a>		
-			<a href="bartenderMain.html" class="nav_btn">Orders</a>
-			<a href="bartenderInventory.html" class="nav_btn">Inventory</a>
-			<a href="bartenderMembers.html" class="nav_btn">Members</a>
-	                <a href="bartenderMenu.html" class="nav_btn">Management</a>
-			<img id="languageId"  onclick='switchLanguage()' src="resources/images/english.png" >
+			<a href="bartenderMain.html"><img class="logo" src="resources/img/logo.png"></a>		
+			<a href="bartenderMain.html" class="nav_btn" id="ordersTxt">Orders</a>
+			<a href="bartenderInventory.html" class="nav_btn" id="inventory">Inventory</a>
+			<a href="bartenderMembers.html" class="nav_btn" id="members">Members</a>
+			<a href="bartenderMenu.html" class="nav_btn" id="management">Management</a>
+			<img id="languageId"  onclick='switchLanguage()' src="resources/img/english.png" >
 			<a href class="nav_btn" id="login">Login</a>
 			
 		
@@ -37,10 +37,10 @@
 					<h1>Inventory (Pseudo)</h1> <a href class="nav_btn" id="orderHistoryEdit_btn">Edit List</a>
 				</div>
 				<div class="list_item">
-					<div class="itemNumber"><p>Number</p></div>
-					<div class="itemName"><p>Product name</p></div>
-					<div class="itemQuantity"><p>Stock</p></div>
-					<div class="itemPrice"><p>Price</p></div>
+					<div class="itemNumber"><p id="number">Number</p></div>
+					<div class="itemName"><p id="productName">Product name</p></div>
+					<div class="itemQuantity"><p id="stock">Stock</p></div>
+					<div class="itemPrice"><p id="price">Price</p></div>
 				</div>
 				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
 				<div class="list_item">
