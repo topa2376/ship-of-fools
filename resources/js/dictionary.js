@@ -7,7 +7,7 @@ dirDict = {
 
 //dictionary for the text and lanaguges
 lanDict = {
-    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'addToCartButton', 'cartHeading', 'payByCard', 'payByCash', 'orderHeading', 'thanksForOrder', 'deliveryNotice', 'newOrderBtn', 'editBtn', 'cancelOrderBtn', 'orderNumber', 'vip-login', 'loginUserName', 'loginPassword', 'loginCancel', 'loginForgotPwd', 'loginbutton'],
+    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'addToCartButton', 'cartHeading', 'payByCard', 'payByCash', 'orderHeading', 'thanksForOrder', 'deliveryNotice', 'newOrderBtn', 'editBtn', 'cancelOrderBtn', 'orderNumber', 'vip-login', 'loginUserName', 'loginPassword', 'loginCancel', 'loginForgotPwd', 'loginbutton', 'vipProfile', 'orderHistory', 'edit', 'view', 'logout'],
         'en' : {
         'login': 'Login',
         'total': 'Total',
@@ -33,11 +33,16 @@ lanDict = {
         'cancelOrderBtn': 'Cancel order',
         'orderNumber': 'Order number: #',
         'vip-login': 'VIP Login',
-        'loginUserName': 'User name',
+        'loginUserName': 'Username',
         'loginPassword': 'Password',
         'loginCancel': 'Cancel',
         'loginForgotPwd': 'Forgot password?',
         'loginbutton': 'Login',
+        'orderHistory': 'Order History',
+        'edit': 'Edit',
+        'view': 'View',
+        'vipProfile': 'VIP Profile',
+        'logout': 'Logout'
     },
 
     //THIS HAS TO BE TRANSLATED!!!!!!
@@ -71,6 +76,11 @@ lanDict = {
         'loginCancel': 'Avbryt',
         'loginForgotPwd': 'Glömt lösenordet?',
         'loginbutton': 'Logga in',
+        'orderHistory': 'Order Historik',
+        'edit': 'Ändra',
+        'view': 'Visa',
+        'vipProfile': 'VIP Profil',
+        'logout': 'Logga ut',
     }
 }
 

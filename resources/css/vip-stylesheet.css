@@ -1,6 +1,6 @@
 /*--------------------HOME PAGE----------------*/
 html,body,header{
-    max-width: 1195px !important; /* ipad size */
+    max-width: 1024px !important; /* Maximum size for iPad in portrait */
     margin: 0 auto;
     width: auto;  
 }
@@ -62,22 +62,16 @@ header{
     width: 300px;
     height: 57px;
     margin: 25px 0px 29.8px 51px;
-    border-radius: 23px;
-    border: #000000;
-    border-width:4px;
-   //border-style:solid;
     background-color: #ffffff;
     overflow: hidden;
     font-size : 18px;
-        font-family: Basic;
-
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.54;
-        letter-spacing: normal;
-        text-align: center;
-
+    font-family: Basic;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+    text-align: center;
     }
 
 
@@ -179,18 +173,40 @@ header{
   margin-bottom: ;
 }
 
-  /* Portrait */
-  @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait)  {
+/* Media queries for tablet in portrait (768x1024px) */
+/* Included classes are adjusted to the sites' breakpoints */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: portrait)  {
+    #languageId{
+        float: right;
+        width: 56px;
+        height: 56px;
+        margin: 30px 0px 29.8px 15px;
+        object-fit: contain;
+        border-radius: 125px;
+    }
+    .VIPinfo{
+        float: right;
+        width: 300px;
+        height: 57px;
+        margin: 25px 0px 29.8px 51px;
+        font-family: Basic;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.54;
+        letter-spacing: normal;
+        text-align: center;
+
+        }
+
+/* Media queries for tablet in portrait (1024x768px) */
+/* Included classes are adjusted to the sites' breakpoints */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: landscape) {
 
     }
-  
-  /* Landscape */
-  @media only screen 
-    and (min-device-width: 768px) 
-    and (max-device-width: 1024px) 
-    and (orientation: landscape) {
-        
-      }
