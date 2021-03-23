@@ -314,6 +314,12 @@ h2{
     /*-----VIPSWITCH----*/
 }
 
+/* ## PLEASE NOTE ##
+Following media queries are placeholders. 
+Elements on this site is has been adjusted for iPad size (i.e., 1024x768px and vise versa.)
+Responsive CSS elements can be found in resources/css/pop-up.css.
+*/
+
   /* Media queries for tablet in portrait (768x1024px) */
   /* Included classes are adjusted to the sites' breakpoints */
   @media only screen 
