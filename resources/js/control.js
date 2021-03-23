@@ -1,13 +1,16 @@
 //============================= Drag and Drop ================================
 
+// Creates a function that can be used to allow for a HTML portion to be used as a drop point. Also prevents the default usage of that event which would be to 
+// go to that link. In our case it's not necessary because we have no links but maybe in the future those names once dropped could be linkable to order details and we wouldn't
+// want to go to order details every time we just wanted to move an order from say pending to accepted. 
 function allowDrop(ev) {
 	ev.preventDefault();
 }
-
+//Creates and enables... drag
 function drag(ev) {
 	ev.dataTransfer.setData("text", ev.target.id);
 }
-
+//Creates and enables... drop
 function drop(ev, el) {
 	ev.preventDefault();
 	var data = ev.dataTransfer.getData("text");
@@ -63,15 +66,15 @@ function getInfo() {
 			break;
   		case "3":
 			update_userInfo();
-			document.getElementById('myLogin').style.display = "none";
 			//window.location.href = "vipProfile.html";
 			break;
   		default:
-			window.location.href = "https://datahahah.ytmnd.com";
+			window.location.href = "https://datahahah.ytmnd.com"; //Sends the user to a funny little page that tells them the imput is wrong
+
 	}
 }
 
-
+// May not be fully used,  here as support for other aspects. 
 function update_userInfo() {
     
 	var userID;
