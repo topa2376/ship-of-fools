@@ -33,26 +33,26 @@
 		<div id="orders">
 		
 			<div class="list" id="ordersRequested" ondrop="drop(event)" ondragover="allowDrop(event)">
-				<div class="heading" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<div class="heading" ondrop="drop(event)" ondragover="allowDrop(event)"> <!----Box where to drag items from ------>
 					<h1>Order Requests</h1>
 				</div>
-				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
-				<div draggable="true"ondragstart="drag(event)" class="list_item" id="held1">
+	
+				<div draggable="true"ondragstart="drag(event)" class="list_item" id="held1">  <!----Draggable items------>
 					<div class="itemNumber"><p>#002</p></div>
 					<div class="itemName"><p>Jari Iktidricka</p></div>
 				</div>
 				<!----End of print------>
 			</div>
 		
-			<div class="list" id="acceptedOrders">
+			<div class="list" id="acceptedOrders"> <!----Box where to drag items that are accepted------>
 				<div class="heading" >
 					<h1>Accepted Orders</h1>
 
 				</div>
 				<div ondrop="drop(event, this)" ondragover="allowDrop(event)" id="holder" >
 
-				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
-					<div draggable="true"ondragstart="drag(event)" class="list_item" id="held2" ondragover="disallowDrop(event)">
+			
+					<div draggable="true"ondragstart="drag(event)" class="list_item" id="held2" ondragover="disallowDrop(event)"> <!----Draggable items------>
 						<div class="itemNumber"><p>#001</p></div>
 						<div class="itemName"><p>Jari Iktidricka</p></div>
 					</div>
@@ -62,18 +62,18 @@
 			</div>
 		</div>
 		
-		<div id="bin_addOrder"  ondrop="drop(event, this)" ondragover="allowDrop(event)">
+		<div id="bin_addOrder"  ondrop="drop(event, this)" ondragover="allowDrop(event)"> <!---- Currently not implemented fully as we lack a database, it just moves them into here and hides them in the picture for demo purposes ---->
 			<img id="bin" src="resources/Images/Bartender/bin.png">
 			<a href class="nav_btn">Add an order</a>
 		</div>
 		
-		<div class="list" id="ordersHistory">
+		<div class="list" id="ordersHistory"> <!---- Currently not implemented ---->
 				<div class="heading">
 					<div id="orderHistoryH1Spacer"></div>
 					<h1>Order History</h1> <a href class="nav_btn" id="orderHistoryEdit_btn">Edit List</a>
 				</div>
-				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
-				<div class="list_item">
+				
+				<div class="list_item"> <!---- Currently not implemented ---->
 					<div class="itemNumber"><p>#001</p></div>
 					<div class="itemName"><p>FirstName LastName</p></div>
 				</div>
