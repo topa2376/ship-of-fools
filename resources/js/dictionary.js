@@ -7,7 +7,7 @@ dirDict = {
 
 //dictionary for the text and lanaguges
 lanDict = {
-    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'addToCartButton', 'cartHeading', 'payByCard', 'payByCash', 'orderHeading', 'thanksForOrder', 'deliveryNotice', 'newOrderBtn', 'editBtn', 'cancelOrderBtn', 'orderNumber', 'vip-login', 'loginUserName', 'loginPassowrd', 'loginRemember', 'loginCancel', 'loginForgotPwd'],
+    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'addToCartButton', 'cartHeading', 'payByCard', 'payByCash', 'orderHeading', 'thanksForOrder', 'deliveryNotice', 'newOrderBtn', 'editBtn', 'cancelOrderBtn', 'orderNumber', 'vip-login', 'loginUserName', 'loginPassowrd', 'loginRemember', 'loginCancel', 'loginForgotPwd', 'loginbutton'],
         'en' : {
         'login': 'Login',
         'total': 'Total',
@@ -38,6 +38,7 @@ lanDict = {
         'loginRemember': 'Remember me',
         'loginCancel': 'Cancel',
         'loginForgotPwd': 'Forgot password?',
+        'loginbutton': 'Login',
     },
 
     //THIS HAS TO BE TRANSLATED!!!!!!
@@ -71,6 +72,7 @@ lanDict = {
         'loginRemember': 'Kom ihåg mig',
         'loginCancel': 'Avbryt',
         'loginForgotPwd': 'Glömt lösenordet?',
+        'loginbutton': 'Logga in',
     }
 }
 
