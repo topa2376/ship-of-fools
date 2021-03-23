@@ -379,9 +379,8 @@ and (orientation: portrait)  {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+  }
 }
-}
-
   /* Media queries for tablet in landscape (1024x768px) */
   /* Included classes are adjusted to the sites' breakpoints and/or visual styling*/
 @media only screen 
