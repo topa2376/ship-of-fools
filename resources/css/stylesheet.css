@@ -129,9 +129,9 @@ header{
 #userInfo{
 	z-index: 11;
 	position: fixed;
-	max-width:1045px; 
+	max-width: 750px; 
 	width: 100%;
-	margin-left: 150px;
+	right: 395px;
     top: 110px;
 	background-color: #fff;
 }
