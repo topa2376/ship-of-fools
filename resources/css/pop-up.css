@@ -22,6 +22,7 @@
     width: 60%;
 }
 
+/* Modal Heading */
 .cartHeading {
   display: flex;
   justify-content: center;
@@ -36,12 +37,13 @@
   font-size: 32px;
 }
 
+/* Wrapper area for cart items */
 .cartItemContainer {
   display: flex;
   justify-content: center;
 }
 
-/* Close Cart Button (x) */
+/* Close Cart Button */
 .closeCart {
     position: absolute;
     right: 25px;
@@ -51,6 +53,7 @@
     font-weight: bold;
 }
 
+/* Button hover effect */
 .closeCart:hover,
 .closeCart:focus {
     color: #FFD130;
@@ -61,6 +64,7 @@
   display: block;
 }
 
+/* Cart item styling */
 .basketElement itemTitle {
   display: inline-block;
   min-width: 250px;
@@ -75,6 +79,7 @@
   color: #000000;
 }
 
+/* Cart item price styling */
 .basketElement itemPrice {
   display: inline-block;
   min-width: 100px;
@@ -90,6 +95,7 @@
   color: #ffd130;
 }
 
+/* Cart input box styling */
 .basketElement Input {
   display: inline;
   float: right;
@@ -100,6 +106,7 @@
   border-radius: 5px; 
 }
 
+/* Cancel button */
 .basketElement Button {
 width: auto;
 display: inline;
@@ -111,6 +118,7 @@ margin-left: 10px;
 background-color: #f44336;
 }
 
+/* Cart item text */
 .itemText {
   font-family: Basic;
   font-size: 24px;
@@ -123,6 +131,7 @@ background-color: #f44336;
   color: #000000;
 }
 
+/* Confirmation icon styling */
 .confirmIcon {
   display: block;
   font-family: IcoFont;
@@ -132,12 +141,14 @@ background-color: #f44336;
   color: #35cc07;
 }
 
+/* Wrapper for carts' total */
 .cartTotalContainer{
   z-index: 12; 
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
+/* Inline styling for carts' total */
 .cartTotalContainer .cartTotal {
   border: #ccc solid 2px;
   width: 50%;
@@ -149,7 +160,7 @@ background-color: #f44336;
   color: #000000;
 }
 
-/* animation */
+/* Cart pop-up animation */
 .cartAnimation{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
 
 /* Full-width input fields */
@@ -162,6 +173,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
   }
   
+  /* Payment wrapper */
   .payments {
     display: flex;
     justify-content: center;
@@ -169,6 +181,7 @@ input[type=text], input[type=password] {
     width: 100%;
   }
 
+  /* Button styling */
     .orderBtns {
     display: flex;
     justify-content: center;
@@ -176,6 +189,7 @@ input[type=text], input[type=password] {
     width: 100%;
   }
 
+  /* Button styling */
   .payBtn {
     display: block;
     min-width: 30%;
@@ -187,10 +201,12 @@ input[type=text], input[type=password] {
     background-color: #FFD130;
   }
   
+  /* Button hover effect */
   .payBtn:hover {
     opacity: 0.8;
   }
 
+  /* Button styling */
   .cancelOrderBtn {
     display: block;
     min-width: 30%;
@@ -202,10 +218,12 @@ input[type=text], input[type=password] {
     background-color: #f44336;
   }
   
+  /* Button hover effect */
   .cancelOrderBtn:hover {
     opacity: 0.8;
   }
 
+  /* Button styling */
   .editBtn {
     display: block;
     min-width: 30%;
@@ -219,12 +237,13 @@ input[type=text], input[type=password] {
     border-style: solid;
     background-color: #ffffff;
   }
-  
+
+  /* Button hover effect */
   .editBtn:hover {
     opacity: 0.8;
   }
 
-  /* Set a style for all buttons */
+  /* General style for buttons */
   button {
     font-family: Basic;
     font-size: 18px;
@@ -238,6 +257,7 @@ input[type=text], input[type=password] {
     width: 100%;
   }
   
+  /* General style button hover effect */
   button:hover {
     opacity: 0.8;
   }
@@ -258,16 +278,19 @@ input[type=text], input[type=password] {
     position: relative;
   }
   
+  /* Avatar container styling */
   img.avatar {
     width: 40%;
     height: 40%;
     border-radius: 50%;
   }
   
+  /* Container used in login form */
   .container {
     padding: 16px;
   }
   
+  /* Login heading style */
   .vip-login-heading {
       font-family: Basic;
       font-size: 24px;
@@ -275,6 +298,7 @@ input[type=text], input[type=password] {
       padding-bottom: 10px;
   }
 
+  /* Password positioning */
   span.psw {
     float: right;
     padding-top: 16px;
@@ -295,7 +319,7 @@ input[type=text], input[type=password] {
     padding-top: 60px;
   }
   
-  /* Modal Content/Box */
+  /* Modal Login */
   .popLoginContent {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
@@ -303,8 +327,7 @@ input[type=text], input[type=password] {
     width: 50%; /* Could be more or less, depending on screen size */
   }
   
-  /* The Close Button (x) */
-
+  /* Close Button */
   .closeLogin {
     position: absolute;
     right: 25px;
@@ -314,13 +337,14 @@ input[type=text], input[type=password] {
     font-weight: bold;
   }
   
+  /* Button hover effect */
   .closeLogin:hover,
   .closeLogin:focus {
     color: #FFD130;
     cursor: pointer;
   }
   
-  /* Add Zoom Animation */
+  /* Zoom animation for login pop-up */
   .loginAnimation {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
@@ -336,7 +360,8 @@ input[type=text], input[type=password] {
     to {transform: scale(1)}
   }
 
-  /* Portrait */
+  /* Media queries for tablet in portrait (768x1024px) */
+  /* Included classes are adjusted to the sites' breakpoints */
 @media only screen 
 and (min-device-width: 768px) 
 and (max-device-width: 1024px) 
@@ -349,7 +374,8 @@ and (orientation: portrait)  {
   }
 }
 
-/* Landscape */
+  /* Media queries for tablet in portrait (1024x768px) */
+  /* Included classes are adjusted to the sites' breakpoints */
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
