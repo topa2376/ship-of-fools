@@ -142,6 +142,7 @@ function getInfo() {
 			window.location.href = "bartenderMain.html";
 			break;
   		case "3": // 3 = VIP, updates the view with user info.
+			document.getElementById('myLogin').style.display = "none";
 			update_userInfo();
 			break;
   		default: // if typeofuser was not set ->
