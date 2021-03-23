@@ -17,6 +17,8 @@ function drop(ev, el) {
 	ev.target.appendChild(document.getElementById(data));
 }
 
+
+
 //============================== Switch language ===============================
 function switchLanguage () {
   if (language=='en'){// English
@@ -42,7 +44,8 @@ function update_language(){
 }
 //==============================
 
-
+//============================== Login ===============================
+//called on Login
 function getInfo() {
     var username = document.getElementById("uname").value
     var password = document.getElementById("psw").value
@@ -53,28 +56,27 @@ function getInfo() {
     for(i = 0; i < DB.users.length; i++){
 		
         if(username == DB.users[i].username && password == DB.users[i].password) { 
-			typeofuser = DB.users[i].credentials;
-			localStorage.setItem("userID", DB.users[i].user_id);
+			typeofuser = DB.users[i].credentials; //sets user type from credentials to be used in switchcase below to login to the correct type of login
+			localStorage.setItem("userID", DB.users[i].user_id); //Stores userID in localStorage so the control can remember which user is logged in if site is refreshed
 			localStorage.setItem("LoggedIn", true);
 		}
         
     }
 	// checks which type of user logged in and switches onto the corresponding page or error if no user+password matched
 	switch (typeofuser) {
-  		case "0":
+  		case "0": // 0 = Bartender, switches to the bartender site
 			window.location.href = "bartenderMain.html";
 			break;
-  		case "3":
+  		case "3": // 3 = VIP, updates the view with user info.
 			update_userInfo();
-			//window.location.href = "vipProfile.html";
 			break;
-  		default:
-			window.location.href = "https://datahahah.ytmnd.com"; //Sends the user to a funny little page that tells them the imput is wrong
+  		default: // if typeofuser was not set ->
+			window.location.href = "https://datahahah.ytmnd.com"; //Sends the user to a funny little page that tells them the input is wrong
 
 	}
 }
 
-// May not be fully used,  here as support for other aspects. 
+// Updates the view with info for VIP if they login/are logged in. 
 function update_userInfo() {
     
 	var userID;
@@ -82,13 +84,12 @@ function update_userInfo() {
 	var account;
 	var loggedIn;
 	
+	// sets our stored varibles (stored in localStorage in case it )
 	loggedIn = localStorage.getItem("LoggedIn");
 	
 	userID = localStorage.getItem("userID");
 
-    // First we find the user ID of the selected user. We also save the index number for the record in the JSON
-    // structure.
-    //
+    // First we find the user ID of the selected user
     for (i = 0; i < DB.users.length; i++) {
         if (DB.users[i].user_id == userID) {   
             userName = DB.users[i].first_name  + " " + DB.users[i].last_name;

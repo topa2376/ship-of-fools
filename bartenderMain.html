@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="resources/js/dictionary.js"></script>
     <script type="text/javascript" src="resources/js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="resources/js/model.js"></script>
-    <script type="text/javascript" src="resources/js/mathFunc.js"></script>
+	<script type="text/javascript" src="resources/js/UndoRedoManager.js"></script>
     <script type="text/javascript" src="resources/js/control.js"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet">
@@ -19,27 +19,26 @@
     <div id="header">
 		
 			<a href="bartenderMain.html"><img class="logo" src="resources/Images/logo.png"></a>		
-			<a href="bartenderMain.html" class="nav_btn">Home</a>
+			<a href="bartenderMain.html" class="nav_btn">Orders</a>
 			<a href="bartenderInventory.html" class="nav_btn">Inventory</a>
 			<a href="bartenderMembers.html" class="nav_btn">Members</a>
+			<a href="bartenderMenu.html" class="nav_btn">Management</a>
 			<img id="languageId"  onclick='switchLanguage()' src="resources/Images/english.png" >
 			<a href class="nav_btn" id="login">Login</a>
-			
-		
-		
-		
+	
     </div>
 	<div class="main">
 		<div id="orders">
 		
-			<div class="list" id="ordersRequested" ondrop="drop(event)" ondragover="allowDrop(event)">
-				<div class="heading" ondrop="drop(event)" ondragover="allowDrop(event)"> <!----Box where to drag items from ------>
+			<div class="list" id="ordersRequested">
+				<div class="heading"> <!----Box where to drag items from ------>
 					<h1>Order Requests</h1>
 				</div>
-	
-				<div draggable="true"ondragstart="drag(event)" class="list_item" id="held1">  <!----Draggable items------>
-					<div class="itemNumber"><p>#002</p></div>
-					<div class="itemName"><p>Jari Iktidricka</p></div>
+				<div ondrop="drop(event, this)" ondragover="allowDrop(event)" class="holder">
+					<div draggable="true"ondragstart="drag(event)" class="list_item" id="held1">  <!----Draggable items------>
+						<div class="itemNumber"><p>#002</p></div>
+						<div class="itemName"><p>Jari Iktidricka</p></div>
+					</div>
 				</div>
 				<!----End of print------>
 			</div>
@@ -49,10 +48,10 @@
 					<h1>Accepted Orders</h1>
 
 				</div>
-				<div ondrop="drop(event, this)" ondragover="allowDrop(event)" id="holder" >
+				<div ondrop="drop(event, this)" ondragover="allowDrop(event)" class="holder">
 
 			
-					<div draggable="true"ondragstart="drag(event)" class="list_item" id="held2" ondragover="disallowDrop(event)"> <!----Draggable items------>
+					<div draggable="true"ondragstart="drag(event)" class="list_item" id="held2"> <!----Draggable items------>
 						<div class="itemNumber"><p>#001</p></div>
 						<div class="itemName"><p>Jari Iktidricka</p></div>
 					</div>
