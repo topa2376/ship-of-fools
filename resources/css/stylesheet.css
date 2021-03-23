@@ -1,6 +1,6 @@
 /*--------------------HOME PAGE----------------*/
 html,body,header{
-    max-width: 1195px !important; /* ipad size */
+    max-width: 1024px !important; /* Maximum size for iPad in portrait */
     margin: 0 auto;
     width: auto;
 }
@@ -8,7 +8,7 @@ h1,h2,h3,h4,p,a,button{
     font-family: Basic;
 
 }
-/*-----------------Icons for buttons---------------*/
+/* -- Icon font for HTML Entities -- */
 
   @font-face {
     font-family: 'IcoFont';
@@ -39,6 +39,7 @@ header{
 .shoppingCartBox{
     float: left;
 }
+/* -- Shopping cart -- */
 .shoppingCart{
     height: 75px;
     margin: 20px 11px 26.8px 29px;
@@ -51,6 +52,7 @@ header{
     border-radius: 50%;
     float: left;
 }
+/* -- Add to cart button -- */
 .addToCartButton{
     margin: 0 auto;
     display: flex;
@@ -64,6 +66,7 @@ header{
     font-size : 16px;
     margin-bottom: 2rem;
 }
+/* -- Total amount iten -- */
 .subTotal{
     float: left;
     margin: 38px 40px 36.8px 11px;
@@ -77,6 +80,7 @@ header{
     text-align: left;
     color: #000000;
 }
+/* -- Login button */
 .loginButton{
     float: right;
     width: 217px;
@@ -86,6 +90,8 @@ header{
     border: #ffd130;
     background-color: #ffd130;
     font-size : 24px;
+
+/* -- VIP Login button --*/
 }
 .loginButtonVIP{
     float: right;
@@ -97,8 +103,8 @@ header{
     background-color: #ffd130;
     overflow: hidden;
     display: none;
-}/*-----VIPSWITCH----*/
-
+}
+/*-----VIPSWITCH----*/
 .loginButtonVIP a{
     display: block;
     margin: 10px 20px;
@@ -107,6 +113,7 @@ header{
     color: #000000;
     float: left;
 }
+/* -- Laguage button --*/
 #languageId{
     float: right;
     width: 56px;
@@ -116,10 +123,9 @@ header{
     border-radius: 125px;
 }
 
-
-
 /*----------------MAIN CONTENT--------------*/
 
+/* -- User information styling (when logged in) -- */
 #userInfo{
 	z-index: 11;
 	position: fixed;
@@ -128,7 +134,6 @@ header{
 	margin-left: 150px;
     top: 110px;
 	background-color: #fff;
-	
 }
 
 #userInfoSpacer{
@@ -185,7 +190,8 @@ header{
    margin-top: 200px !important;
 }
 
-/*----------FILTER-----------*/
+
+/*-- Filter box styling --*/
 .filterBox{
     float: left;
     min-width: 4%;
@@ -218,6 +224,8 @@ header{
     margin: 10px auto;
     object-fit: contain;
 }
+
+/* -- Not implemented -- */
 .filter2{
     width: 19px;
     height: 43px;
@@ -226,7 +234,7 @@ header{
     display: block;
 
 }
-/*----------BANNER+PRODUCT BOX----------*/
+/*----------BANNER+PRODUCT BOX FOR VIP----------*/
 .rightContainer{
     float: right;
     width: 89%;
@@ -305,3 +313,27 @@ h2{
     display: none;
     /*-----VIPSWITCH----*/
 }
+
+/* ## PLEASE NOTE ##
+Following media queries are placeholders. 
+Elements on this site is has been adjusted for iPad size (i.e., 1024x768px and vise versa.)
+Responsive CSS elements can be found in resources/css/pop-up.css.
+*/
+
+  /* Media queries for tablet in portrait (768x1024px) */
+  /* Included classes are adjusted to the sites' breakpoints */
+  @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait)  {
+      
+    }
+  
+    /* Media queries for tablet in portrait (1024x768px) */
+    /* Included classes are adjusted to the sites' breakpoints */
+  @media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1024px) 
+    and (orientation: landscape) {
+
+      }

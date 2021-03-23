@@ -1,16 +1,16 @@
 /* The Modal (background) */
 .popCartBg {
     display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 20;  /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    position: fixed; 
+    z-index: 20; 
+    padding-top: 100px; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 /* Modal Content */
@@ -368,14 +368,21 @@ and (max-device-width: 1024px)
 and (orientation: portrait)  {
   .popLoginContent {
     background-color: #fefefe;
-    margin: 0% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 0% auto 15% auto; /* 0% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 75%; /* Could be more or less, depending on screen size */
+    width: 75%; /* Adjusted for the Ipad orientation */
+  }
+  /* Pop-up modual adjusted for portait mode */
+  .popCartContent {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
   }
 }
-
-  /* Media queries for tablet in portrait (1024x768px) */
-  /* Included classes are adjusted to the sites' breakpoints */
+  /* Media queries for tablet in landscape (1024x768px) */
+  /* Included classes are adjusted to the sites' breakpoints and/or visual styling*/
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
@@ -384,6 +391,21 @@ and (orientation: portrait)  {
       background-color: #fefefe;
       margin: 0% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
       border: 1px solid #888;
-      width: 60%; /* Could be more or less, depending on screen size */
+      width: 60%; /* Reduced width for landscape */
     }
+  /* Pop-up modual adjusted for landscape mode */
+    .popCartContent {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 75%;
+  }
+  .popCartBg {
+    display: none;
+    position: fixed; 
+    z-index: 20; 
+    padding-top: 50px; /* reduced padding from top */
+
+}
 }
