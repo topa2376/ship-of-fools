@@ -7,7 +7,7 @@ dirDict = {
 
 //dictionary for the text and lanaguges
 lanDict = {
-    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'addToCartButton'],
+    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'addToCartButton', 'cartHeading', 'payByCard', 'payByCash', 'orderHeading', 'thanksForOrder', 'deliveryNotice', 'newOrderBtn', 'editBtn', 'cancelOrderBtn', 'orderNumber', 'vip-login', 'loginUserName', 'loginPassowrd', 'loginRemember', 'loginCancel', 'loginForgotPwd'],
         'en' : {
         'login': 'Login',
         'total': 'Total',
@@ -21,7 +21,23 @@ lanDict = {
         'priceinclvat': 'Price (including VAT):', 
         'productionyear': 'Production Year: ',
         'organic': 'Organic: ',
-        'addToCartButton': 'Add to cart'
+        'addToCartButton': 'Add to cart',
+        'cartHeading': 'Current Order',
+        'payByCard': 'Pay with card',
+        'payByCash': 'Pay to waiter',
+        'orderHeading': 'Order Confirmed',
+        'thanksForOrder': 'Thanks for your order!',
+        'deliveryNotice': 'We will deliver your drinks soon',
+        'newOrderBtn': 'New order',
+        'editBtn': 'Edit order',
+        'cancelOrderBtn': 'Cancel order',
+        'orderNumber': 'Order number: #',
+        'vip-login': 'VIP Login',
+        'loginUserName': 'User name',
+        'loginPassowrd': 'Password',
+        'loginRemember': 'Remember me',
+        'loginCancel': 'Cancel',
+        'loginForgotPwd': 'Forgot password?',
     },
 
     //THIS HAS TO BE TRANSLATED!!!!!!
@@ -38,7 +54,23 @@ lanDict = {
         'priceinclvat': 'Pris (inklusive moms):',
         'productionyear': 'Produktionsår: ',
         'organic': 'Ekologisk: ',
-		'addToCartButton': 'Lägg till'
+		'addToCartButton': 'Lägg till',
+        'cartHeading': 'Aktuell Beställning',
+        'payByCard': 'Betala med kort',
+        'payByCash': 'Betala till servitris',
+        'orderHeading': 'Beställning bekräftad',
+        'thanksForOrder': 'Tack för din beställning!',
+        'deliveryNotice': 'Vi kommer med dina drycker strax',
+        'newOrderBtn': 'Ny beställning',
+        'editBtn': 'Ändra beställning',
+        'cancelOrderBtn': 'Avbryt beställning',
+        'orderNumber': 'Ordernummer: #',
+        'vip-login': 'VIP Login',
+        'loginUserName': 'Användarnamn',
+        'loginPassowrd': 'Lösenord',
+        'loginRemember': 'Kom ihåg mig',
+        'loginCancel': 'Avbryt',
+        'loginForgotPwd': 'Glömt lösenordet?',
     }
 }
 

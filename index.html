@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>Ship of the Fools</title>
+	<!-- Site title -->
+	<title>Ship of the Fools</title>
+	<!-- Included JavaScript files -->
     <script type="text/javascript" src="resources/js/loader.js"></script>
     <script type="text/javascript" src="resources/js/beverages.js"></script>
     <script type="text/javascript" src="resources/js/beverages_eng.js"></script>
-    <link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/pop-up.css">
     <script type="text/javascript" src="resources/js/dictionary.js"></script>
     <script type="text/javascript" src="resources/js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="resources/js/model.js"></script>
     <script type="text/javascript" src="resources/js/DBLoaded.js"></script>
     <script type="text/javascript" src="resources/js/control.js"></script>
     <script type="text/javascript" src="resources/js/control_cart.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<!-- Included Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/pop-up.css">
+    <!-- Import font 'Basic' from Google fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet"> <!--FONT--->
 </head>
 <body>
@@ -21,7 +25,9 @@
     <!---------------HEADER---------------->
     <header >
         <div class="mainHeader">
+			<!-- Logotype -->
             <a href="index.html"><img class="logo" src="resources/img/logo.png"></a>
+			<!-- Shoppingcart -->
             <div class="shoppingCartBox">
                 <!-- Cart button -->
                 <button onclick="document.getElementById('myCart').style.display='block'" style="width:auto;" class="shoppingCart">&#xefe7;</button>
@@ -57,52 +63,57 @@
 		
     </div>
 		
-	<!-- The Cart -->
+	<!-- Shopping Cart Content-->
+	<!-- Parts of code inspired from w3schools: https://www.w3schools.com/howto/howto_css_modals.asp -->
 	<div id="myCart" class="popCartBg">
 	<!-- Cart content -->
-
 		<div class="popCartContent cartAnimation">
 
-			<!-- Close button (x) -->
+			<!-- Close button -->
 			<span onclick="document.getElementById('myCart').style.display='none'" class="closeCart" title="Close Cart">&times;</span>
-			<!-- Content here -->
-			<div class="cartHeading">Current order</div>
+			<!-- Shopping cart content -->
+			<div class="cartHeading" id="cartHeading"></div>
 			<div class="cartItemContainer">
 				<div id="cartItems" class="basketElement"></div>
 			</div>
 			<div class="cartTotalContainer">
-				<div id="cartSubTotal" class="cartTotal">Total: 123.45kr</div>
+				<div id="cartSubTotal" class="cartTotal"></div>
 			</div>
 			<div class="payments">
-				<button type="button" class="payBtn">Pay with card</button>
-				<button type="button" class="payBtn">Pay to waiter</button>
+				<button type="button" class="payBtn" id="payByCard"></button>
+				<button type="button" class="payBtn" id="payByCash"></button>
 			</div>
 		</div>
 	</div>
-	<!-- CONFIRMATION TEST HERE -->
+	<!-- Order confirmation content. Uses elements from shoppingcart -->
 	<div id="myConfirmation" class="popCartBg">
-		<!-- Cart content -->
+		<!-- Order content -->
 		<div class="popCartContent cartAnimation">
-			<!-- Close button (x) -->
+			<!-- Close button -->
 			<span onclick="document.getElementById('myConfirmation').style.display='none'" class="closeCart" title="Close Cart">&times;</span>
-			<!-- Content here -->
-			<div class="cartHeading">Order Confirmed</div>
+			<!-- Confirmation content -->
+			<div class="cartHeading" id="orderHeading"></div>
 			<div class="cartItemContainer">
+				<!-- Order confirmation icon -->
 				<div class="confirmIcon">&#xeed7;</div>
 				<br>
 			</div>
-			<div id="confirmationText" class="itemText">Thanks for your order!</div>
-			<div id="confirmationText" class="itemText">We will deliver your drinks soon.</div>
+			<!-- Order Notice -->
+			<div class="itemText" id="thanksForOrder"></div>
+			<div class="itemText" id="deliveryNotice"></div>
 			<div class="cartTotalContainer">
-				<div id="orderID" class="cartTotal">Order Number: #0001</div>
+				<!-- Order Nunmber -->
+				<div class="cartTotal" id="orderNumber"></div>
 			</div>
+			<!-- Post-order functions *Not implemented* -->
 			<div class="orderBtns">
-				<button type="button" class="payBtn">New order</button>
-				<button type="button" class="editBtn">Edit order</button>
-				<button type="button" class="cancelOrderBtn">Cancel order</button>
+				<button type="button" class="payBtn" onclick="document.getElementById('myConfirmation').style.display='none'" id="newOrderBtn"></button>
+				<button type="button" class="editBtn"></button>
+				<button type="button" class="cancelOrderBtn"></button>
 			</div>
 		</div>
 	</div>
+	<!-- Additional JavaScript to open the pop-up boxes -->
 	<script>
 		var cartModal = document.getElementById("myCart");
 		var cartOrder = document.getElementById("myConfirmation");
@@ -116,27 +127,27 @@
 	
 	<!-- Login Content Start -->
 	<div id="myLogin" class="popLoginBg">
-		<!-- Login Form. -->
+		<!-- Login Form. Code inspired from W3schools: https://www.w3schools.com/howto/howto_css_login_form.asp -->
 		<form class="popLoginContent loginAnimation" action="" method="post">
 			<div class="imgcontainer">
-				<div id="vip-login" class="vip-login-heading">Vip Login</div>
-				<span onclick="document.getElementById('myLogin').style.display='none'" class="closeLogin" title="Close Modal">&times;</span>
+				<div id="vip-login" class="vip-login-heading"></div>
+				<span onclick="document.getElementById('myLogin').style.display='none'" class="closeLogin" title="Close Login">&times;</span>
                 <img src="resources/img/pirate.png" alt="Avatar" class="avatar">
 			</div>
 			<div class="container">
-				<label for="uname"><b>Username</b></label>
+				<label for="uname" id="loginUserName"><b></b></label>
 				<input type="text" placeholder="Enter Username" id="uname" required> <!-- Corresponding to getInfo in control.js --> 
-				<label for="psw"><b>Password</b></label>
+				<label for="psw" id="loginPassword"><b></b></label>
 				<input type="password" placeholder="Enter Password" id="psw" required> <!-- Corresponding to getInfo in control.js --> 
 				<button type="button" onclick="getInfo()"; userDetails(userName) id="loginbutton">Login</button> <!-- Corresponding to getInfo in control.js --> 
 				<label>
-					<input type="checkbox" checked="checked" id="remember"> Remember me
+					<input type="checkbox" checked="checked" id="LoginRemember"> 
                 </label>
 			</div>
 			<onclick="validate"()>
 				<div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('myLogin').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw"><a href="#">Forgot password?</a></span> <!-- placeholder not currently working-->
+                <button type="button" onclick="document.getElementById('myLogin').style.display='none'" class="cancelbtn" id="loginCancel"></button>
+                <span class="psw" id="loginForgotPwd"><a href="#"></a></span> <!-- placeholder not currently working-->
                 </div>
             </form>
             <script>
