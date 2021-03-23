@@ -150,16 +150,16 @@ function beverageTypes() {
     return types;
 }
 
+//// =====================================================================================================
+//This function returns an array of elements based on the given category 
 function selectedCategory(product){
-    if (product == 'All'){
+    if (product == 'All'){ //base case, returns all beverages.
         return (engBev);
     }
-
     var types = [];
-
-    for (i = 0; i < engBev.length; i++) {
-        if (engBev[i].catgegory == product){
-            types.push(engBev[i]);
+    for (i = 0; i < engBev.length; i++) { //loop through the selection 
+        if (engBev[i].catgegory == product){ //if the type is the same as the desired type 
+            types.push(engBev[i]); //add to the array.
         };
     };
     return types;
