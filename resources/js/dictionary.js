@@ -7,7 +7,7 @@ dirDict = {
 
 //dictionary for the text and lanaguges
 lanDict = {
-    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'addToCartButton', 'cartHeading', 'payByCard', 'payByCash', 'orderHeading', 'thanksForOrder', 'deliveryNotice', 'newOrderBtn', 'editBtn', 'cancelOrderBtn', 'orderNumber', 'vip-login', 'loginUserName', 'loginPassword', 'loginCancel', 'loginForgotPwd', 'loginbutton', 'vipProfile', 'orderHistory', 'edit', 'view', 'logout'],
+    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'addToCartButton', 'cartHeading', 'payByCard', 'payByCash', 'orderHeading', 'thanksForOrder', 'deliveryNotice', 'newOrderBtn', 'editBtn', 'cancelOrderBtn', 'orderNumber', 'vip-login', 'loginUserName', 'loginPassword', 'loginCancel', 'loginForgotPwd', 'loginbutton', 'vipProfile', 'orderHistory', 'edit', 'view', 'logout', 'availableOptions', 'menu', 'number', 'productName', 'stock', 'price', 'orderHistoryEdit_btn', 'ordersTxt', 'inventory', 'members', 'management'],
         'en' : {
         'login': 'Login',
         'total': 'Total',
@@ -42,7 +42,18 @@ lanDict = {
         'edit': 'Edit',
         'view': 'View',
         'vipProfile': 'VIP Profile',
-        'logout': 'Logout'
+        'logout': 'Logout',
+        'availableOptions': 'Available Options',
+        'menu': 'Menu',
+        'number': 'Number',
+        'productName': 'Product name',
+        'stock': 'Stock',
+        'price': 'Price',
+        'orderHistoryEdit_btn': 'Edit List',
+        'ordersTxt': 'Orders',
+        'inventory': 'Inventory',
+        'members': 'Members',
+        'management': 'Management',
     },
 
     //THIS HAS TO BE TRANSLATED!!!!!!
@@ -81,6 +92,17 @@ lanDict = {
         'view': 'Visa',
         'vipProfile': 'VIP Profil',
         'logout': 'Logga ut',
+        'availableOptions': 'Tillgängliga Alternativ',
+        'menu': 'Meny',
+        'number': 'Nummer',
+        'productName': 'Produkt namn',
+        'stock': 'Antal',
+        'price': 'Pris',
+        'orderHistoryEdit_btn': 'Ändra Lista',
+        'ordersTxt': 'Ordrar',
+        'inventory': 'Lager',
+        'members': 'Medlemar',
+        'management': 'Förvaltning',
     }
 }
 
@@ -102,6 +124,7 @@ function get_string(key) {
     return lanDict[language][key];
 }
 
+//What is this?
 function get_product(key){
     return engBev[key];
 }

@@ -1,6 +1,6 @@
 /*--------------------BARTENDER----------------*/
 html,body,header{
-    max-width: 1195px !important; /* ipad size */
+    max-width: 1600px !important; /* Desktop display size */
     margin: auto;
     width: auto;  
 }
@@ -10,7 +10,7 @@ h1,h2,h3,h4,p,a,button{
 }
 .wrapper{
 	margin: auto;
-	max-width: 1195px;
+	max-width: 1600px;
  	background-color: #fff;
 }
 /*-----------------HEADER---------------*/
@@ -186,16 +186,7 @@ h1,h2,h3,h4,p,a,button{
 	width: 200px;
 }
 
-/* ----------- Non-Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
-}
-
-/* ----------- Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (min-resolution: 192dpi) { 
-}
+/* ## PLEASE NOTE ##
+This css does not contain any media queries.
+Elements on this site is has been adjusted for desktop display with max-width at 1600px
+*/
