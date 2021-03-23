@@ -15,19 +15,16 @@
 <body>
 	 
 <div class="wrapper">
-
     <div id="header">
 		
 			<a href="bartenderMain.html"><img class="logo" src="resources/images/logo.png"></a>		
-			<a href="bartenderMain.html" class="nav_btn">Order</a>
-			<a href="bartenderInventory.html" class="nav_btn">Inventory</a>
-			<a href="bartenderMembers.html" class="nav_btn">Members</a>
-	        <a href="bartenderMenu.html" class="nav_btn">Management</a>
-			<img id="languageId"  onclick='switchLanguage()' src="resources/images/english.png" >
+			<a href="bartenderMain.html" class="nav_btn" id="ordersTxt">Orders</a>
+			<a href="bartenderInventory.html" class="nav_btn" id="inventory">Inventory</a>
+			<a href="bartenderMembers.html" class="nav_btn" id="members">Members</a>
+			<a href="bartenderMenu.html" class="nav_btn" id="management">Management</a>
+			<img id="languageId" onclick='switchLanguage()' src="resources/img/english.png">
 			<a href class="nav_btn" id="login">Login</a>
 			
-		
-		
     </div>
 	<div class="main">
 		
@@ -37,9 +34,9 @@
 					<h1>Members (Pseudo)</h1> <a href class="nav_btn" id="orderHistoryEdit_btn">Edit List</a>
 				</div>
 				<div class="list_item">
-					<div class="itemNumber"><p>Number</p></div>
-					<div class="itemName"><p>Product name</p></div>
-					<div class="itemCredit"><p>Credit</p></div>
+					<div class="itemNumber"><p id="number">Number</p></div>
+					<div class="itemName"><p id="productName">Product name</p></div>
+					<div class="itemCredit"><p id="credit">Credit</p></div>
 				</div>
 				<!----JavaScript foreach that prints each i in AcceptedOrders-list here------>
 				<div class="list_item">

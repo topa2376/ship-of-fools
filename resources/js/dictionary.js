@@ -7,7 +7,7 @@ dirDict = {
 
 //dictionary for the text and lanaguges
 lanDict = {
-    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'addToCartButton', 'cartHeading', 'payByCard', 'payByCash', 'orderHeading', 'thanksForOrder', 'deliveryNotice', 'newOrderBtn', 'editBtn', 'cancelOrderBtn', 'orderNumber', 'vip-login', 'loginUserName', 'loginPassword', 'loginCancel', 'loginForgotPwd', 'loginbutton', 'vipProfile', 'orderHistory', 'edit', 'view', 'logout', 'availableOptions', 'menu', 'number', 'productName', 'stock', 'price', 'orderHistoryEdit_btn', 'ordersTxt', 'inventory', 'members', 'management'],
+    'keys' : ['login','total', 'name', 'productionyear', 'producer', 'countryoforiginlandname', 'category', 'alcoholstrength', 'packaging', 'priceinclvat', 'productionyear', 'organic', 'addToCartButton', 'cartHeading', 'payByCard', 'payByCash', 'orderHeading', 'thanksForOrder', 'deliveryNotice', 'newOrderBtn', 'editBtn', 'cancelOrderBtn', 'orderNumber', 'vip-login', 'loginUserName', 'loginPassword', 'loginCancel', 'loginForgotPwd', 'loginbutton', 'vipProfile', 'orderHistory', 'edit', 'view', 'logout', 'availableOptions', 'menu', 'number', 'productName', 'stock', 'price', 'orderHistoryEdit_btn', 'ordersTxt', 'inventory', 'members', 'management', 'credit'],
         'en' : {
         'login': 'Login',
         'total': 'Total',
@@ -54,6 +54,7 @@ lanDict = {
         'inventory': 'Inventory',
         'members': 'Members',
         'management': 'Management',
+        'credit': 'Credit',
     },
 
     //THIS HAS TO BE TRANSLATED!!!!!!
@@ -103,6 +104,7 @@ lanDict = {
         'inventory': 'Lager',
         'members': 'Medlemar',
         'management': 'Förvaltning',
+        'credit': 'Kredit', 
     }
 }
 
@@ -124,7 +126,6 @@ function get_string(key) {
     return lanDict[language][key];
 }
 
-//What is this?
 function get_product(key){
     return engBev[key];
 }

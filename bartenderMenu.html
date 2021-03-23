@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
 	<link rel="stylesheet" href="./resources/css/bartenderMenu_stylesheet.css">
     <title>Bartender</title>
-	<!-- <script type="text/javascript" src="resources/js/dictionary.js"></script>
+	<script type="text/javascript" src="resources/js/dictionary.js"></script>
     <script type="text/javascript" src="resources/js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="resources/js/model.js"></script>
     <script type="text/javascript" src="resources/js/mathFunc.js"></script>
-    <script type="text/javascript" src="resources/js/control.js"></script> -->
+    <script type="text/javascript" src="resources/js/control.js"></script>
 	
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet">
@@ -21,15 +21,13 @@
 
 		<div id="header">
 
-			<a href="./bartenderMain.html"><img class="logo" src="./resources/Images/logo.png"></a>
-			<a href="./bartenderMain.html" class="nav_btn">Orders</a>
-			<a href="./bartenderInventory.html" class="nav_btn">Inventory</a>
-			<a href="./bartenderMembers.html" class="nav_btn">Members</a>
-			<a href="bartenderMenu.html" class="nav_btn">Management</a>
+			<a href="index.html"><img class="logo" src="./resources/img/logo.png"></a>
+			<a href="bartenderMain.html" class="nav_btn" id="ordersTxt">Orders</a>
+			<a href="bartenderInventory.html" class="nav_btn" id="inventory">Inventory</a>
+			<a href="bartenderMembers.html" class="nav_btn" id="members">Members</a>
+			<a href="bartenderMenu.html" class="nav_btn" id="management">Management</a>
 			<img id="languageId" onclick='switchLanguage()' src="./resources/Images/english.png">
 			<a href class="nav_btn" id="login">Login</a>
-
-
 
 		</div>
 		<div class="main">
@@ -37,63 +35,29 @@
 			<div id="orders">
 				<div class="list" id="bartenderMenu">
 					<div class="heading">
-						<h2>Menu</h2>
+						<h2 id="menu">Menu</h2>
 					</div>
-					<!----Loop all drinks that has been added to menu------>
-					<!-- <div class="list_item" id=''>
-						<p class='drinkID'>#id</p>
-						<p class='drinkName'>Blablaname(40%)</p>
-						<p class="drinkPrice">SEK 20</p>
-						<a href='#' class="deleteFromMenu"><img class="delete" src="./resources/Images/delete.png"></a>
-						<form class='changePriceBox'>
-							<label>SEK</label>
-							<input type="text">
-							<a href='#' class="nav_btn" class="changePrice">Change price</a>
-						</form>
-					</div> -->
-					<!----End of print------>
 					<div class="menuBoxBartender">
 
 					</div>
-					<!-- <div class="test"></div> -->
 				</div>
 
 			</div>
-
-
-
 
 			<!-------------------OPTIONS --------------------->
 
 			<div class="list" id="optionBox">
 				<div class="heading">
-					<h2>Available Options</h2>
+					<h2 id="availableOptions">Available Options</h2>
 				</div>
-
-				<!----Loop print all drinks that has not been added to the Menu ------>
-				<!-- <div class="list_item">
-					
-					<p class='drinkID'>#id</p>
-				
-					<p class='drinkName'>Blablaname(20%)</p>
-					
-					<p class="drinkPrice">SEK 20</p>
-					
-					<a href='#' class="nav_btn" id="addToMenu">Add to Menu</a>
-				</div> -->
-				<!----End of print------>
 				<div class="listBoxBartender">
 
 				</div>
 			</div>
-
-
 		</div>
-
 	</div>
 	<script src='./resources/js/beverages_eng.js'></script>
 	<script src='./resources/js/loader.js'></script>
-	
 	
 </body>
 
