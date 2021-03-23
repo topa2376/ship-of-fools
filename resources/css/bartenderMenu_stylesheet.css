@@ -1,6 +1,6 @@
 /*--------------------BARTENDER----------------*/
 html,body,header{
-    max-width: 1600px !important; /* Max width for desktop */
+    max-width: 1600px !important; /* Max width for desktop display */
     margin: auto;
     width: auto;  
 }
