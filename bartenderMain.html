@@ -15,15 +15,14 @@
 <body>
 	 
 <div class="wrapper">
-
     <div id="header">
 		
-			<a href="bartenderMain.html"><img class="logo" src="resources/Images/logo.png"></a>		
-			<a href="bartenderMain.html" class="nav_btn">Orders</a>
-			<a href="bartenderInventory.html" class="nav_btn">Inventory</a>
-			<a href="bartenderMembers.html" class="nav_btn">Members</a>
-			<a href="bartenderMenu.html" class="nav_btn">Management</a>
-			<img id="languageId"  onclick='switchLanguage()' src="resources/Images/english.png" >
+			<a href="bartenderMain.html"><img class="logo" src="resources/img/logo.png"></a>		
+			<a href="bartenderMain.html" class="nav_btn" id="ordersTxt">Orders</a>
+			<a href="bartenderInventory.html" class="nav_btn" id="inventory">Inventory</a>
+			<a href="bartenderMembers.html" class="nav_btn" id="members">Members</a>
+			<a href="bartenderMenu.html" class="nav_btn" id="management">Management</a>
+			<img id="languageId"  onclick='switchLanguage()' src="resources/img/english.png" >
 			<a href class="nav_btn" id="login">Login</a>
 	
     </div>
@@ -32,7 +31,7 @@
 		
 			<div class="list" id="ordersRequested">
 				<div class="heading"> <!----Box where to drag items from ------>
-					<h1>Order Requests</h1>
+					<h1 id="orderReq">Order Requests</h1>
 				</div>
 				<div ondrop="drop(event, this)" ondragover="allowDrop(event)" class="holder">
 					<div draggable="true"ondragstart="drag(event)" class="list_item" id="held1">  <!----Draggable items------>
