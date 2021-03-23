@@ -1,5 +1,3 @@
-//============================= Drag and Drop ================================
-
 // Creates a function that can be used to allow for a HTML portion to be used as a drop point. Also prevents the default usage of that event which would be to 
 // go to that link. In our case it's not necessary because we have no links but maybe in the future those names once dropped could be linkable to order details and we wouldn't
 // want to go to order details every time we just wanted to move an order from say pending to accepted. 
@@ -15,6 +13,15 @@ function drop(ev, el) {
 	ev.preventDefault();
 	var data = ev.dataTransfer.getData("text");
 	ev.target.appendChild(document.getElementById(data));
+
+}
+// Deletes the entry instead of just hiding it in the picture if the above code would have been used
+function del(ev, el){
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("Text");
+    var el = document.getElementById(data);
+    el.parentNode.removeChild(el);
+
 }
 
 //=== Psudocode for Undo/redo and getting required data for that from "drop" function ===
